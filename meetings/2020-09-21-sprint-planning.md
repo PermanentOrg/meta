@@ -22,6 +22,7 @@ Engineering team gets in synch on this week's goals and this sprint's status
 
 ## Roll Call
 Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+
     * Karl Fogel <kfogel@"".com>  ("Open Tech Strategies: We're the '' in '.com'!")
     * xmunoz <xmunoz@xmunoz.xmunoz> :P
     * Dan Schultz <dan@opentechstrategies.com>
