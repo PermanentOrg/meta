@@ -1,6 +1,6 @@
 # PERMANENT LEGACY FOUNDATION – Permanent.org
 Sprint Planning
-2020-11-02, 1pm CT
+2020-11-09, 1pm CT
 Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei?authuser=0
 
 ## Purpose
