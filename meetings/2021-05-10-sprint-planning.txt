@@ -1,0 +1,54 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning 2021-05-10, 11am CT 
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose:
+Engineering team gets in synch on this week's goals and this sprint's status
+
+## Outcome: 
+* Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+* Share any good news ya' got!
+* Sprint Review
+* Open PRs
+* Individual Issue Items
+
+
+## Roll Call
+	* Jason
+	* Cecilia
+	* Natalie
+
+## Good news
+	* RC is doing well!
+	* Restaurant date on Friday o.O
+	* Went out shopping AT the store this weekend
+
+## Notes
+	* Tickets
+		* Cecilia assigned several to Natalie, but doesn't expect all of them to get done
+		* Relevant reading: https://permanent.atlassian.net/wiki/spaces/EN/pages/1187938307/Permissions
+	* Notifications
+		* https://pad.riseup.net/p/2021-05-10-notifications-status
+		* Logging PRs in infra, upload, and notification-service (need review from Cecilia)
+		* Jason will update https://github.com/PermanentOrg/notification-service/pull/31 to include sending context to FCM
+			* Possibly also add some tests
+		* Cecilia to start with PR review and stand by for whatever Jason needs
+		* Ideally do dev and staging deploys today
+		* Hold off on back-end#38, at least for today
+		* Cecilia to review planned notification types and verify what we're actually sending emails for (vs what we thought we wanted to be sending emails for)
+
+
+### Open PRs
+GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+
+
+
+BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+
+### (Other) Priorities
+	* Reimaging for better logging and prod state for microservices will also allow us to do backend #36
+	* Database fix for tag uniqueness should go out this week
+	* GFTW continued
+	* Data update for a user - Cecilia has a meeting tomorrow
+	* https://permanent.atlassian.net/browse/PER-8335

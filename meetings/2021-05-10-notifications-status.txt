@@ -1,0 +1,30 @@
+2021-05-10
+
+Current status:
+	* Sending notifications on share of a file/folder to an archive or via a share link
+		* However, in some cases a double notification is sent.  Any other information about this?
+
+Today:
+	* Send notifications with context, in general (in progress)
+		* See https://github.com/PermanentOrg/notification-service/pull/31
+		* Also needs a followup to https://github.com/PermanentOrg/notification-service/pull/30 (this is the biggest risk to slip)
+		* Backend change: https://bitbucket.org/permanent-org/back-end/pull-requests/35
+	* Specifically add context to the share notification that already exists (in progress)
+		* See https://bitbucket.org/permanent-org/back-end/pull-requests/35
+	* Deploy all this to staging
+	* Doing all that would give you one notification with context to work on
+	* I imagine we need to share user-visible text for these notifications, too - how would you like to do that?
+		* Someone at Permanent will write this
+
+Tomorrow:
+	* Finish anything that slipped from today
+	* Add next set of notifications (in progress):
+		* approve/deny a request for access from a share link
+		* notify on access granted after requesting access via a share link
+		* See https://bitbucket.org/permanent-org/back-end/pull-requests/38
+
+Then:
+	* Remaining notifications
+		* Acceptance of a folder or file share
+		* Acceptance of membership in an archive 
+		* Declining membership in an archive
