@@ -1,0 +1,50 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-06-14, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei?authuser=0
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Jason
+	* Natalie
+	* Mithuna
+	* Karl (late b/c unaccustomed to meetings starting on the quarter hour, but will get it right next time)
+
+## Notes
+
+* Good News
+	* I got to play D&D, in person, for the first time in over a year!
+	* Met some friends
+	* Also met up with some friends
+
+* Open PRs
+        * GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+
+        * BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+
+* Projects
+	* Tag editing
+		* On Mithuna. She knows what to do and will wait on blockers to be unblocked.
+	* Notifications
+		* Mobile team still has some blockers, including missing assets
+			* Robert is working on text
+			* Designer is out today, but is expected back tomorrow
+		* Deployments?
+			* App release: plan to submit to app store this week
+				* Submitting to app store is distinct from releasing to public; we press a separate button to do the latter, at a time of our choosing.
+			* We will need to do a infrastructure release to get the new secrets out - full image build & deploy. Will plan on doing that Tuesday or Wednesday
+		* Mithuna to take a look at https://permanent.atlassian.net/browse/PER-8394 and comment in the issue
+	* Natalie to spin off new issue from https://permanent.atlassian.net/browse/PER-7945
+		* https://permanent.atlassian.net/browse/PER-8397
+	* Website work - waiting on Cecilia to come back
