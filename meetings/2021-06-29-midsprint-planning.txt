@@ -1,0 +1,81 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-06-29, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei?authuser=0
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Cecilia
+	* Natalie
+	* Jason
+	* Mithuna
+
+## Notes
+
+* Good News
+	* Nainika attended her first in person class.
+	* I look forward to sleeping in my own bed tonight
+	* It is somehow not as hot here
+	* Saw a friend from out of town
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+
+		* Natalie will get back to web-app #33 after working on download from public
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Mithuna will add a feature flag for back-end #58
+		* Mithuna will do more testing on back-end #69
+		* Jason to test back-end #71 (migration tool)
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* Cecilia
+			* 8353 - still uncertain how to check whether this worked or not
+			* 7904: won't fix may be.
+			* 8405: will do today
+			* 8384,8385,8386: all archive seperation work. Excited to do it this week.
+		* Jason
+			* Auth research in progress; still need to split out issues on epic
+			* 8218,8219: Now website is deployed unblocked on wordpress issues.
+		* Mithuna
+			* 3 jiras in PR
+			* 8340: need some discussion on tag migration
+			* 8354: Blocked by PR to work on editable tags
+			* 8297, 8330: Plaaning to finish it this week.
+		* Natalie
+			* Stripe API key rotation is in progress - Natalie will write up a process doc for this so we can discuss in channel
+			* Download from public works.  One file was causing trouble, Natalie will see whether she can find out why.
+			* Angular assets are still mysterious!
+
+* Projects
+	* Migration for tags
+		* I can write 2 queries for folder and records seperately
+		* Should we use
+		* Mithuna will add new entries for each of the tag-archive matches in `tag` table
+		* Also need to update the `tag_link` table
+	* Availability
+
+* Deployments
+	* What is going out this week?
+		* Ready now:
+			* Stripe bug - API key with quote in GitHub secrets; only deployed to dev so far
+			* Invitation code
+		* Planned this week:
+			* Possibly the Stripe API keys? Let's do this separately, though
+			* Wording change on deletion
+			* Feature flag for tag changes
+	* Who is deploying this week?
+		* Recently:
+		* This week: Jason
+
+* Jason availability
+	* starting at 10 Central, but would prefer not to schedule meetings before 11 Central
