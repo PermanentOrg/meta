@@ -1,0 +1,107 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-07-06, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-06-29-midsprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Mithuna
+	* Jason
+	* Cecilia
+	* Natalie
+
+## Notes
+
+* Good News
+	* Got a tenant for our old home.
+	* Got to go to a few birthday parties🎊
+	* 4th of July socializing was fun!
+	* Got to see fireworks this weekend
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Jason will look at #33
+		* Cecilia will look at #36
+			* Unclear on QA status with Kaitlyn; ok for now and iterate later?
+		* Jason will look at #26
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Mithuna will look at #72
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* Cecilia:
+			* learned some things about how we do time zones :)
+			* got lightsail into production!
+		* Jason did a lot of unticketed works this sprint
+			* so many meetings
+			* code review
+			* automated docker builds to unblock local tags work
+			* set up lightsail in staging
+			* made some progress on removing Permanent API keys
+		* Mithuna
+			* Investigated B2
+			* Made progress on local tags
+		* Natalie
+			* FamilySearch help text
+			* Inline donation flow
+		* Blockers:
+			* Natalie: waiting on creds from Robert, will make punchlist for Stripe API key rotation,
+			* Mithuna: data migration (8340)
+			* Jason: just time
+			* Cecilia: firebase deploy - hand off to Jason; default archive - cross-team and hand off to Kaitlyn/Natalie
+
+* Projects
+	* Account/archive separation - merge some part of this?
+		* Would like to merge PER-8384 ( but would require making account.defaultArchiveId nullable in all environments
+		* Goal would be to merge this ASAP (PR could be open today if the team wants this to go in) in order to minimize long-lived branches
+	* Backblaze B2
+		* Mithuna to choose a file and determine how to find it in Backblaze.  Could be a new ticket or a continuation of this one depending on how she wants to organize it
+	* Stripe API keys
+		* See above, need the punchlist / order of operations
+	* Mobile app
+		* Rushing leads to worse results
+		* Mobile team has more work to do
+		* Thomas is a good partner on this; will write user-facing instructions
+		* Mobile team need to provide public links; Amberly will test instructions Thomas writes and then T will push out communications to members
+	* Q3
+		* Objective 1 is engineering-supported
+		* Objective 2:
+			* Deployment to be discussed below
+			* Jason will talk to Robert about New Relic and make tickets
+			* Auth
+		* Objective 3:
+			* Download service - Mithuna to schedule time to plan/discuss with Jason
+		* Projects and roadmap tab!
+			* Each person should have 1-3 projects related to OKRs
+			* Jason: auth and performance
+			* Mithuna: download service
+			* Natalie: separating account/archive (for KR 1.1)
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* Last week: fixing our broken deployment process
+	* What is going out this week?
+		* Ready now:
+			* Database: need to make tag change, want to do serious tag testing in staging first
+				* Jason will ask Thomas for help testing tags in staging
+			* A bunch of stuff in staging but not prod: local tags (behind a feature flag), Stripe test API key change, invitation code, inline donation flow, delete archive wording, familysearch text update...?
+		* Planned this week:
+			* public download button, after the above deployment
+		* Who is deploying this week?
+			* Recently: Jason (sort of)
+			* This week: Jason to wrap up (Weds), Natalie to do the public download button deployment (Thurs)
