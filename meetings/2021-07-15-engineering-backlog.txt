@@ -1,0 +1,44 @@
+Permanent.org
+July 15, 2021
+
+Invited: Jason, Mithuna, Natalie
+
+Purpose: make sure the engineers know what's going into the next sprint, and that everything is ready to be worked on
+
+https://permanent.atlassian.net/secure/RapidBoard.jspa?rapidView=3&projectKey=PER&view=planning.nodetail&issueLimit=100
+
+Individual issues to discuss:
+	* https://permanent.atlassian.net/browse/PER-8399
+	* Selected Sentry errors
+		* https://permanent.atlassian.net/browse/PER-8434
+			* https://sentry.io/organizations/permanentorg/issues/2108995172/?project=3663562&referrer=jira_integration
+			* Estimate at 5 story points
+		* https://permanent.atlassian.net/browse/PER-8435
+			* Estimate at 5 story points
+	* https://permanent.atlassian.net/browse/PER-8421
+		* Natalie to convert to epic and split out substories: set up eslint with no rules, run in CI, and either configure minimal rules or figure out how to only lint changes in CI
+
+https://docs.google.com/spreadsheets/d/1ZKsUfDN-0gHd2lsHsZQQanyXt7vLeLCHy8VoWgHI1d0/edit#gid=1272208490
+
+Roadmap items
+	* Download Service
+		* Mithuna created a design doc; Jason to review
+			* https://docs.google.com/document/d/1BrXofqS0M1CgfY8Ndl0piJx_qSdSWcq_5-T-VnOk7oE/edit
+		* Create a new service for download
+			* Mithuna and Jason to pair
+			* Mithuna to create Jira
+		* Research on how to attach metadata to file
+			* Mithuna talked with Kaitlyn & Amberly, who suggested lots of related reading
+	* Improve deployments
+		* nothing scheduled here, aside from ongoing work of deploying work as it is finished
+	* Improve performance - wire up New Relic
+		* involves secrets, so somewhat risky
+		* https://permanent.atlassian.net/browse/PER-8426
+			* Mithuna will try to get it done first week of sprint, or else Jason will do second week
+		* https://permanent.atlassian.net/browse/PER-8427
+			* Natalie will do
+	* Auth for microservices and third parties
+		* Jason to create Jira issues
+		* Jason to review Karl's research
+		* Jason to talk with Dean contact about auth
+		* Continue to remove Permanent API keys
