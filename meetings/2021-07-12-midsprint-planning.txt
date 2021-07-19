@@ -1,0 +1,76 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-07-12, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-07-05-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Mithuna
+	* Jason
+	* Karl (Chicago -- go Central Time Zone!)
+	* Cecilia
+
+## Notes
+
+* Good News
+	* Jason: made some slight progress on planning vacation!
+	* Cecilia: Made it to the "dog going to another caretaker for a couple weeks" date, which I was nervous about
+	* Karl: mostly recovered from bizarro covid recapitulation.  Turns out one needs lungs!  Who knew?
+	* Mithuna: Drove to Houston. Nainika is happy to be with her cousins.
+	* Natalie: Went to the local record store and bought a lot of stuff
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Cecilia will merge docker 23, which should update the database that the pipelines use, and then rerun the pipeline on back-end 75
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* Natalie will put on calendar a conversation with Jason about the upcoming manual rotation of the Stripe API key (two-braining it to make sure all bases are covered).  See PER-8281.
+		* Mithuna: 8342 Got clarification on this jira from Cecilia and added comments to the jira. Will work on 8297 and 8414. Also will look into backend PR#72
+		* Jason is also working on getting New Relic accounts set up with Robert
+	* Blockers:
+		* Pledge dashboard needs credentials; Robert is back and Natalie will talk with him
+
+* Tickets
+	* https://permanent.atlassian.net/browse/PER-8422
+
+* Projects
+	* Engineering backlog refinement
+		* Please take a look at Sentry and pick an (easy!) issue to fix - either by addressing the underlying issue, or by not reporting operation-as-usual to Sentry - and we'll discuss it on Thursday
+	* Deployment windows
+		* first draft, which we can change later: Tue 5-7 Central, Wed 3-5 Central, Thur 4-6 central
+		* need to create on team calendar, Jason will do
+	* Intern Project Related Things
+		* Converting our code turned out to be pretty difficult
+		* Maybe it would be better to start from scratch, like the "make an archive" page on signup
+		* Converting to react turns out to be less promising a solution that previously thought
+		* Still starting with a React tutorial
+
+* Deployments
+	https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+	https://github.com/PermanentOrg/meta/wiki/Releases
+	Jason reminds us that goal is to deploy every week this quarter.
+		* Last week:
+		* What is going out this week?
+			* Ready now: migration tool, small API change for removing the perm API key, eslint upgrade
+			* Planned this week: some tags stuff, database changes for account/archive separation, Stripe API key
+		* Who is deploying this week?
+			* Recently: Natalie, Jason
+			* This week: Mithuna
+
