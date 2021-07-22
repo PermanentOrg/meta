@@ -1,0 +1,39 @@
+2021-07-22 Cross Team Grooming
+Kaitlyn, Cecilia, Natalie, Jason
+
+https://www.google.com/url?q=https://permanent.atlassian.net/issues/?jql%3Dlabels%2520in%2520(cross-team-grooming)%2520and%2520status%2520%253D%2520Open%2520order%2520by%2520created%2520DESC&sa=D&source=calendar&ust=1627342445814000&usg=AOvVaw2eB1pwzi1-8ID4k6iYkqWd
+
+	* New label for experience team grooming
+
+Tickets
+	* Expiring invitations - 8430, 8431, 8451
+		* Should the inviter get space granted to them when a user signs up, even after the invitation expires?
+			* Kaitlyn thinks yes, they should, even if it happens after the expiration date and the new user does not connect to the archive - it's still a referral
+			* Test case: user signs up with invited email address, but not by clicking the link in the invitation email - should still count
+		* Kaitlyn would like to diagram out all the invitation flows
+			* Improve the understanding of everyone at Permanent about how invitations work
+			* Make sure that we're keeping all invitation flows consistent
+			* Will wait to implement this until Kaitlyn has had the chance to do this work
+		* Expiration dates are only for invitations to people who have not signed up for Permanent; they live in the `invite` table which has an `expiresDT` column
+	* Front-end changes to mitigate performance issues - 8428
+		* Let's not gray out the entire screen; that sounds like a lot of work for a not-great user experience
+		* Changing the cursor to be an hourglass or whatever to indicate work is happening; this can probably be done in addition to the spinner. This will only be for desktop, as there is no pointer on the mobile web app!
+		* So, spinner!
+		* Hopefully this is a relatively small fix while we work on larger performance issues
+		* Will plan on doing this next sprint
+		* Note that the main work is showing anything while loading, so Natalie suspects that changing exactly what is shown should be fairly easy
+	* What should links look like? 8416
+		* In the modern aesthetic, the defaults (underlines, blue for unvisited, purple for visited) are considered ugly, but we should maintain that functionality
+		* Let's keep the underlining on links all the time (except for hover)
+		* Let us never write "click here" again +1
+		* Kaitlyn to double-check with experience team
+		* Will plan on doing this next sprint
+	* Internet archive 8286
+		* Kaitlyn will QA this afternoon
+
+Meta
+	* How do we make these meetings more effective? How do we turn around work more quickly?
+		* This isn't really for OKR work; this is the so-called "business as usual" work
+		* The risk of long, two-week turnarounds is real; how do we speed up estimation? but also, how do engineers get the information they need to effectively estimate?
+			* Let's try talking in slack more? And have engineers try to do some time-box estimation research as issues are created
+
