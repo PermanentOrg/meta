@@ -1,0 +1,46 @@
+Permanent.org
+July 15, 2021
+
+Invited: Robert, Thomas, Jason
+
+Purpose: bring Jason up to speed on what visibility Robert has into the Permanent application by way of Tableau
+
+Data sources
+	* MySQL database - our prod2 read replica
+	* Tableau extracts data locally to be able to more effectively iterate on queries, and avoid waiting for long-running queries; Robert refreshes weekly
+
+Reports
+	* Total users
+		* filters: account_id
+			* manually excludes non-personal staff accounts
+			* Robert flags newly created test accounts weekly to add them to the filter
+		* filter: status
+		* filter: type, only includes completed accounts and not invited accounts
+			* this is why the column exists in the database, even though the code does not use it after setting it
+		* filter: primary email, removes the test accounts
+	* Total Upload Volume
+	* Weekly user acquisition
+	* Weekly uploads (GB); also in Mithuna's report
+		* also by #
+	* Weekly invitations
+	* Theirstory weekly (GB)
+	* Theirstory by Archive
+		* archive_id is painful; has a archive search saved
+		* manually entering archive_id => display name mapping, which Tableau is able to apply globally
+	* Weekly logins
+		* comes from activity table, which contains every login event, and Robert filters by last login
+		* could also do daily active users
+	* Direct Signups by Token
+		* invite codes keep track of where people came from
+		* stacked bargraph, color coded by token (aka invite code)
+		* maybe broken by code changes?
+
+Missing reports?
+	* not now, but next quarter: avg upload size for a new user
+		* created account within last <time>
+		* are we moving the needle between shortening the time between signup & uploads, and increasing the amount of data uploaded
+
+Critical Tableau functionality? no
+	* the GUI is kinda nice, but not entirely necessary
+
+Robert knows some of the folks https://data.world/
