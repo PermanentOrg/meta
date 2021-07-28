@@ -1,0 +1,56 @@
+2021-07-28
+Diagnosing back-end issues
+
+Purpose: teach Natalie and Jason how to figure out what's wrong / what's happening with the Permanent application when something unexpected happens
+
+Example scenarios:
+	* last week's upload spree breaking Robert's demo
+		* Check AWS for queues esp HP ones
+		* If in high need, can restart servers.
+	* slack alert that uploads are stuck
+		* Will check database for files uploaded in the last hour. Check its statuses. 
+		* If it is a hige number will monitor the files wvery 30min to 1 hour to make sure thaqt it is passing along.
+		* if I feel like the numbers are not coming down will check the AWS queues and status of High Priority queues
+		* Also run htop on TR to see if there is anything suspicious.
+		* Sometimes the system needs a service restart. Usually I start with queue daemon. 
+			* sudo service process-daemon stop/start
+				* hasn't been a problem in quite some time; probably won't need to do
+			* sudo service queue-daemon stop/start
+				* gets tasks from SQS, and runs them
+				* this is the one to most likely need restarting
+				* restart if tasks look stuck - long-running processes that don't appear to be making progress, or a lot of messages in the SQS queue but not much activity on task-runner
+			* sudo service sqs-daemon stop/start
+				* just for adding items to the SQS queue
+				* check the queue folder in the disk
+				* hasn't been a problem for quite some time
+			* sudo service video-daemon stop/start
+				* mostly hasn't been a problem?
+	* Main point is with the new upload, users files are safe.
+	* Statuses - record.status in the database
+		* If files are in processing status, the user might experience thumbnail related issues mainly
+		* If files are in converting status it is okay.
+		* Statuses in prod
+			* processing 3
+			* reprocessing 
+				* if processing fails 5 times, then mark it as reprocessing
+				* we might not be doing reprocessing any more?
+			* needs_processing 2
+			* uploaded 1
+			* converting 5
+			* needs_converting 4
+			* only_meta 
+				* not sure how this happens; may be an artifact of the old upload process
+			* manual_review 
+			* error
+			* deleted
+	* Query 
+		SELECT distinct status, count(status)   
+		FROM perm.record   
+		where  
+			status NOT IN ('status.generic.ok' ,'status.record.only_meta', 'status.generic.deleted') 
+		 and  
+			(createdDT > NOW() - INTERVAL 5 hour and createdDT < NOW() - INTERVAL 15 MINUTE ) group by status;
+			
+			Suspicious activity
+			Jason: TR task running longer than more than a minute or 2.
+			
