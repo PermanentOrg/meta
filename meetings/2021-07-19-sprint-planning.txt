@@ -1,0 +1,75 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-07-12, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-07-12-midsprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Mithuna
+	* Jason
+
+## Notes
+
+* Good News
+	* Talked to a friend, might go visit next month
+	* Ordered a new laptop
+	* Enjoyed the week at Katy with family.
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Natalie to ping Kaitlyn about QA on https://github.com/PermanentOrg/web-app/pull/33
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Mithuna to squash #77 and hold for rest of tags feature
+		* Mithuna to squash #83 and merge & deploy this week
+		* Jason to follow up w/C on 75
+		* Jason working with Kaitlyn on #72
+		* Jason to review #78, thanks Mithuna for updating the description
+			* Mithuna to add testing instructions
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* Jason to check if migrations were run in dev/staging/prod for https://permanent.atlassian.net/browse/PER-8418
+		* https://bitbucket.org/permanent-org/%7B7f83782a-3c5c-4809-af86-4535539963fe%7D/pull-requests/23
+			* Natalie to make sure this is run in her local
+		* Cecilia's pending tasks will be taken over by Jason
+		* Jason to finish reviewing Mithuna's design doc. https://docs.google.com/document/d/1BrXofqS0M1CgfY8Ndl0piJx_qSdSWcq_5-T-VnOk7oE/edit
+		* Mithuna finsihed almost all tag related stories. 
+			* Copying a file will copy its tag too.
+			* Design doc is ready for review too
+		* 
+
+* Tickets & Projects
+	* Tags
+		* PER-8338 https://permanent.atlassian.net/browse/PER-8338
+		* Mithuna to own this epic now that Cecilia is fading away
+		* Search for tags is the last story in this milestone; the rest of the stories in this epic are lower priority
+	* Pledge dashboard
+		* Natalie and Jason to discuss before x-team grooming
+	* Download service setup
+		* Mithuna and Jason to discuss
+
+* Deployments
+	https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+	https://github.com/PermanentOrg/meta/wiki/Releases
+	* Last week: migration tool, notification feature flag removal, upload filename in getLeanItems, stripe API key rotation
+	* What is going out this week?
+		* Ready now: tag-link constraint migration (via tool)
+		* Planned this week: #83 tag copy, web-app#33 internet archive fix, back-end#72 remove unused dep
+	* Who is deploying this week?
+		* Recently: all of us
+		* This week: Jason
