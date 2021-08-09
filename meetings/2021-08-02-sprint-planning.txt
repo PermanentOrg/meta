@@ -1,0 +1,75 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-08-02, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-07-26-midsprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Jason
+	* Mithuna
+
+
+## Notes
+
+* Good News
+	* Bought plane tickets!
+	* Same here.
+	* Going on a group bicycle ride on Thursday with a friend
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* back-end#86: Jason will do
+		* back-end#78: Mithuna will do
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* Jason to add more issues on auth to this sprint
+		* Mithuna to add follow-up issue to 8438 for Sentry on download-service 
+		* 8399 - is a folder_linkId unique? probably not
+			* if you need more information in the initial call, then we can add that on the back-end
+		* 8198 - Natalie to convert to epic & stories, rather than story & subtasks
+	* Blockers:
+		* 8426 - new relic on back-end
+		* 8399 - Natalie will do more research, but might need help figuring out what the correct caching key is
+		* 7963 - Natalie to rewrite issue to be completable and to include the current plan
+		* 8300 - Mithuna to convert from story & subtasks to epic & stories
+
+* Projects
+	* acct-archive sep
+		* Jason is working on an API endpoint
+		* Natalie is working on prototyping the page
+		* more work schedule for next sprint
+		* Jason to talk with Robert about prioritization
+	* New Relic
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* Last week:
+	* What is going out this week?
+		* Ready now:
+			* back-end#75 (with manual database migration in docker#23, which was applied in dev but not staging or prod)
+		* Planned this week: 
+			* 8256 instance types
+			* 8385 new invitations endpoint for acct/archive sep
+			* Some of Natalie's smaller things (and hopefully 8399)
+	* Who is deploying this week?
+		* Recently: Natalie
+		* This week: Jason
+
