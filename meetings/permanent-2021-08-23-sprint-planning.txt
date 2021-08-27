@@ -1,0 +1,71 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-08-23, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+TBA; riseup.net is down right now
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Jason
+	* Natalie
+	* Mithuna
+
+## Notes
+
+* Good News
+	* Celebrated onam https://en.wikipedia.org/wiki/Onam.
+	* Rode ~18 miles on my bike
+	* My computer works again (and is also now upgraded)
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Remove API keys: Natalie will do
+		* depandabot PRs
+			* download-service and notification-service: Mithuna will do
+			* test-node-sdk & ep_permanent-exporter: Jason will do
+			* donations-firebase & node-sdk: Natalie will do
+		* make links more obvious: Natalie will look at and work with Kaitlyn
+		* Jason to find merged PR for Natalie to look at
+			* https://github.com/PermanentOrg/web-app/pull/44
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* 86: Jason will do
+		* 98: Mithuna will do
+		* 77: still on hold waiting for tag changes
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* 8475: Natalie to investigate a little further, and then pair with Mithuna on back-end part
+		* 8440: Mithuna to convert to epic and subtasks to stories
+	* Blockers:
+		* 8475 - pairing; time scheduled on calendar
+
+* Projects
+    * acct-archive sep
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+    * Last week: NR
+    * What is going out this week?
+        * Ready now: some API key removal
+        * Planned this week: 
+			* More API key removal
+			* Maybe acct/archive stuff
+			* Link CSS
+    * Who is deploying this week?
+        * Recently: Jason
+        * This week: Mithuna
+

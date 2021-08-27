@@ -1,0 +1,67 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-08-09, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-08-02-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Jason
+	* Mithuna
+	* Natalie
+
+
+## Notes
+
+* Good News
+	* Quality time with friends
+	* New baby
+	* Also got to hang out with friends
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Mithuna will create variables for secrets in Infrastructure repo for NR
+		* Natalie unknown about Kaityln's contribution on  test plan.  
+		* Jason will make a Jira about moving the bootstrap vendor files to a dependency
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* 
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* 
+	* Blockers:
+		* Mithuna & Jason to talk about NR tomorrow; Mithuna to schedule
+
+* Projects
+	* New Relic
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* Last week:
+	* What is going out this week?
+		* Ready now:
+			* 
+		* Planned this week: 
+			* 8256 instance types
+			* 8385 new invitations endpoint for acct/archive sep
+			* 8426 New Relic on the back-end
+			* 8354 edit tags
+			* 8342 tag search
+	* Who is deploying this week?
+		* Recently: Jason, Natalie
+		* This week: Mithuna (with Jason supporting)
+
