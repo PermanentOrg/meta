@@ -1,0 +1,62 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-08-30, 11:15am CT
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-08-23-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Jason
+	* Mithuna
+	* Natalie
+
+## Notes
+
+* Good News
+	* Got another ~10 miles on bike
+	* choreo almost done for our next dance shoot
+	* traveling!
+
+* Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Natalie will review functional-test PR
+		* pledge-dashboard PRs: defer to next week when we work on hosting the pledge dashboard
+		* node-sdk: Natalie will do
+		* download-service & upload-service: Mithuna will do
+		* test-node-sdk & ep_permanent_exporter: Jason will do
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Jason will do invitation endpoint
+			* Invitations is not useful after signup, and we already have an endpoint for archives. Jason will write this up in more detail and close PR
+	* Jira board: https://permanent.atlassian.net/browse/PER
+	* Blockers:
+		* Download service; Jason and Mithuna to talk later
+
+* Projects
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now: some dependabot PRs
+		* Planned this week:
+			* Jason: EC2 instance types
+			* Mithuna: Delete tags (incl rename)
+			* Natalie: reporting more errors to sentry
+	* Who is deploying this week?
+		* Recently: Mithuna, Jason
+		* This week: Jason
