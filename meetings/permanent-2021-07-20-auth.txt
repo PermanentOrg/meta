@@ -1,0 +1,50 @@
+2021-07-20 Auth conversation
+Permanent.org
+Jason Owen https://jasonaowen.net/
+Keith Casey https://caseysoftware.com/about-me
+
+Agenda
+	* Introductions
+	* Context
+	* Suggestions & questions
+
+Context
+	* Permanent.org is currently using a PHP backend with cookies and homegrown auth
+		* Currently ~4k users; around 60 logins/week with 30 day sessions
+	* We're moving to microservices, which are starting to need auth
+	* Partners need Permanent users to delegate access, eg "Connect with Permanent.org"
+		* Eventually want to specify access allowed, a la GitHub
+	* We have budget to pay for an auth provider, can self-host if needed, and would prefer not to build a new auth system from scratch
+	* Have considered, but not yet selected or implemented, an API gateway of some sort
+
+Suggestions & questions
+	* Heroku with API gateways? unsure
+		* Cloud66 is a competitor
+	* First step: get everything to speak OAuth
+		* very simple scopes, eg "you have read" or "you have write access"
+		* for inside the org, as a first step, including front-end to back-end
+		* "east-west" in API gateway terms
+	* Next, expand outwards
+		* Front-end uses JWT tokens
+		* Everything is OIDC, so talk to partners - https://www.youtube.com/watch?v=996OiexHze0
+	* How does session revocation work?
+		* JWTs don't make this easy
+		* Mitigate: revoke application session, then user can't log in via provider
+		* Mitigate: short-lived tokens - 5m is aggressive and for high security interactions, normally an hour
+		* link: API access management best practices - https://developer.okta.com/docs/concepts/api-access-management/#recommended-practices-for-api-access-management
+	* API clients?
+		* "three legged oauth flow" / "user centric oauth flow"; client uses returned token in authorization header; client also gets refresh token - this also validates that the client has not been revoked, in addition to the user session being revoked
+		* vs "client credential flow", for eg cron job
+	* How impersonation (eg "staffer logs in as user")?
+		* inherently risky / dangerous
+		* most systems are not ready to say "this is user X acting as user Y"; need a bunch of safeguards in the system. eg staffer shouldn't be allowed to reset password
+		* 99.9% the wrong way to go - fight this as hard as I can; puts us in a really awkward position if something bad happens
+		* instead, need permissions model: eg Keith allows Jason to access archive X from {date} to {date}
+	* Resources for migrating existing systems? So far I've only found "build a new app with <provider> auth!" guides
+		* Coworker at Okta wrote a 12-15 page whitepaper: https://www.okta.com/resources/whitepaper/okta-user-migration-guide/
+	* What am I not thinking about which I should be?
+		* fight password sharing / impersonation
+		* Expiration windows for tokens and sessions; be aware of risks - viewing archive vs changing billing info
+			* Revalidate old sessions - most people don't mind
+			* Highest security level: deletion
+		* Linkedin learning: courses on API design, auth, etc
