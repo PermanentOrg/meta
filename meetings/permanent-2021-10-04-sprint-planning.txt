@@ -1,0 +1,64 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-10-04, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-09-29-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+# Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Jason
+	* Mithuna
+	* 
+
+# Notes
+
+# Good News
+	* My dance video went live over the weekend.
+	* I bought a bike this weekend
+	* Cristina is going on a bike tour
+	* I read a book in the sun
+
+# Open PRs and status
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* Jira board: https://permanent.atlassian.net/browse/PER
+	* Blockers:
+
+# Projects
+	* Onboarding Cristina
+
+# Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* back-end change to add column to account table
+			* web-app #49 refresh after copy
+			* web-app #52 navigation
+			* web-app #53 remove unused accountvo fields
+			* 
+		* Planned this week:
+			* Adding Cristina's ssh key
+			* Apple json file for iOS app thing
+			* Maybe: back-end routing?
+			* delete tag
+			* maybe: full screen metadata editor? (probably not)
+	* Who is deploying this week?
+		* Recently: 
+		* This week: Natalie
