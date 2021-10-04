@@ -1,0 +1,69 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-09-29, 9:35am Pacific
+Hosted on Google Meet at https://meet.google.com/fsy-jfyd-qei
+
+## Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+## Outcomes
+    * Review current status of some active tickets involved in recent work
+
+## Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+## Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-09-20-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Mithuna
+	* Jason
+	* Natalie
+
+## Notes
+
+* Good News
+	* My house is back to what it used to be after 2 chaotic weeks.
+	* Family vacation next August!
+	* I revived a dead website from the wayback machine
+
+* Open PRs
+    GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* Mithuna will work on the -service dependabot PRs
+	* #49 is ready; Natalie will merge
+	* #48 Natalie is meeting with Kaitlyn, and will ask Robert
+	* donations dependapot PRs are low priority
+    BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* #105 Jason reached out to support last night, no reply yet
+	* Natalie will work on email PRs
+	* Mithuna is working on #99
+	* #102 Mithuna will look at the database to try to figure out what's different about the folder she has in prod
+    Jira board: https://permanent.atlassian.net/browse/PER
+    Natalie will fill in descriptions for https://permanent.atlassian.net/browse/PER-8421
+    Blockers:
+
+* Projects
+	* Tags
+	* Auth
+	* Hard delete.
+	* Onboarding
+
+* Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* nothing
+		* Planned this week:
+			* back-end change to add column to account table
+			* web-app #49 refresh after copy
+			* web-app #52 navigation
+			* web-app #53 remove unused accountvo fields
+	* Who is deploying this week?
+		* Recently: Natalie
+		* This week: Mithuna
