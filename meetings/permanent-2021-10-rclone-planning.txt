@@ -1,0 +1,43 @@
+2021-10-01 rclone planning session
+Invited: Cristina, Jason, Karl, James
+
+Agenda: discuss the statement of work, plan it out the work in more detail, and identify who will be doing what
+
+Process overview (or: "how to do the important stuff while not blowing the budget"): For stuff that's very directly rclone-related, we can do that without having to check in again -- that's already clearly within bounds for the SOW.  For stuff that's not so directly related, we need to get explicit buy-in before we spend hours on it.  For example, there might be tech-debt paydown work that makes the rclone work easier to do; if so, we should describe it and make sure Permanent management agrees that it's justified.  But we need to be up-front about the categorization of all work.  If we're coming in on the high end of every single hours estimate, we're probably taking on too many things.
+
+Jason's wishlist of things for Cristina to do; not yet scoped for rclone specifically:
+	* VERY RCLONE: Scaling task-runner - make sure it handles termination correctly, eg without dropping jobs
+	* VERY RCLONE: Solving the duplicate names problem.  This includes just figuring out how many duplicates we actually have right now, which is it's own chunk of work (Jason tried it before and it turns out it's not a 1-hour script).
+	* MEDIUM RCLONE: Move back-end (including tests) from Bitbucket to GitHub (not yet in jira)
+	* MEDIUM RCLONE: Finish up database migrations: https://permanent.atlassian.net/browse/PER-8300
+	* ROADKILL: Remove wordpress remnants from infrastructure
+		* Makes deployments easier and faster if this is done.
+		* Make sure we test this thoroughly in case there's something using it that is non-obvious (e.g. check logs, etc)
+	* MEDIUM RCLONE: Figure out what all would be involved in moving the back-end to Heroku
+		* WebDAV service could start out life on Heroku (?)
+	* NON-RCLONE (?): Set up the pledge dashboard on Firebase
+	* VERY RCLONE: Training Amberly (Professional Services) on how to use rclone automate much of her job.
+	* VERY RCLONE: Cloud-to-cloud synchronization (may or may not end up involving rclone itself, but totally within our SOW).
+	* NON-RCLONE: Logging system
+		* However, new code will be written with generic logging instrumentation, so that we can retarget to different logging back-ends later as we wish.
+			* Maybe New Relic can be used for this?
+
+Karl's wishlist:
+	* Taking this opportunity to open source more of the stuff.
+		* All new work open source.
+		* Moving things into node-sdk also makes it open
+		* If existing code can be easily opportunistically open-sourced, do that along the way.
+		* Task runner work can be opened (maybe?)
+		* Bonus deliverable: Have a good idea of what it would take to open it all.  Some of this will be a natural result of the Heroku work
+
+James's wishlist:
+	* Architect in such a way that supporting other protocols is easy in the future (e.g. can Permanent be pod storage?)
+		* https://solidproject.org/
+
+Figure out what the other role(s) will be, so that we can start looking for folks
+ * Backend dev / microservices / talk to webdev (Rclone dev)
+		* Effective in TypeScript
+		* To a lesser degree, effective in php, if only to figure out how the backend works
+		* Bonus: familiar with webdav already
+		* Bonus: familiar with rclone already
+		* Relatively senior, self driven, sharp, etc
