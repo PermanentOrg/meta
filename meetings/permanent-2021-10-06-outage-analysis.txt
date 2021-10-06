@@ -1,0 +1,95 @@
+Permanent engineering
+Root cause analysis of partial outage
+2021-10-06 2pm pacific
+At: https://meet.jit.si/PermanentEngineeringOutageRCA
+Invited: Cristina, Jason, Kaitlyn Mithuna, Natalie
+
+Agenda:
+	* How to have a blameless postmortem
+	* What happened? Build out timeline of known events
+	* Discuss causes - five whys, etc
+	* Possible solutions
+	* Outside communication
+
+# Timeline
+
+2021-09-20: found bug in vagrant, filed issue in nodesource
+	https://github.com/nodesource/distributions/issues/1262
+
+Deployed to prod yesterday at 4:19pm Pacific
+	https://permanent-org.slack.com/archives/GC4998R1R/p1633475959084900?thread_ts=1633471367.080300&cid=GC4998R1R
+Discovered upload-serivce was down at 7:45am Pacific
+Engineers contacted at that time
+7:59am Pacific - Tweeted and posted to Facebook about outage
+	* https://twitter.com/permanentorg/status/1445765664183099392
+	* https://www.facebook.com/permanentorg/posts/4480982161925167
+Logged into dev, ran `journalctl -u upload.service` -> nodejs command not found
+Looked up the ticket previously filed https://github.com/nodesource/distributions/issues/1262
+Ran that command, started the services, repeated in staging and prod
+Finished by 8:10am Pacific
+8:14am - posted about being back up
+	* https://twitter.com/permanentorg/status/1445769388984979462
+	* https://www.facebook.com/permanentorg/posts/4481024061920977
+Total 16 hours partial downtime
+
+# Impact
+Just two (non-Permanent) people
+One of them had just donated last night, at 8pm pacific
+
+# What went right?
+
+Resolved quickly once we noticed
+The problem was known, previously reported, and that report included steps to workaround
+
+# What went wrong?
+
+# Causes
+
+	* We did not run the functional tests
+		* Was intending to, but we were changing the deployment process/documentation during the deployment
+			* so when we decided that we didn't need to a separate code deploy, "I guess we're done"
+			* we did some manual testing - creating accounts, copying files
+			* did not test uploading, because there were no obvious reasons to test uploading
+			* we have been concious of the amount of time deployments are taking, and by this time we were 1.5 hours into our 2 hour window
+		* Running the functional tests are a manual step
+		* The functional tests require manual validation
+	* There was a bug in nodesource
+		* We discovered that bug, but did not proactively work around it
+			* Lack of confidence in local environment
+				* Rebuilding local environments takes some amount of time
+				* Fear around rebuilding local env, which has caused problems in the past
+		* Can we rely on nodesource?
+	* We did not notice that upload-service was down
+		* The deployment process does not validate that the required services are running
+		* We do not have a monitoring system
+	* We did not notice the sentry errors when people were failing to upload
+	* Spurious error when running sudo
+	* Not a lot of documentation about what to do
+	* Piecing together who was affected after the fact
+		* Our sentry logs do not contain enough user information
+
+# Possible Solutions
+
+	* Switch how we distribute nodejs
+		* Official binaries: https://nodejs.org/en/download/
+		* or, work around nodesource bug
+	* Set up an upload monitor that uploads things at regular intervals using a web browser (e.g. selenium-based test)
+	* Integrate the functional test into the deployment pipeline in an automated way
+	* Reduce number of sentry errors so that new errors are meaningful
+		* Both: reduce the number of regular operation "errors", like "session expired", and fix the actual bugs
+	* Reduce the number of files the functional-test uploads, so as to speed up the test
+	* Update documentation to say functional test should always be run during infrastructure deployments
+	* Update the image-building script to validate that all the expected services are started successfully
+	* Expose the health check APIs for notification- and upload-service via apache proxy config
+	* And then sign up for some kind of something that automatically hits those endpoints and reports on failure
+		* eg, uptimerobot, statuscake, maybe something in AWS?, etc
+	* Playbook: cocument troubleshooting steps in hosted environments; types of things to look for. *not* a duplication of readmes, but rather a diagnostic handbook
+	* SRE training
+	* Add context to Sentry: https://docs.sentry.io/platforms/php/enriching-events/identify-user/
+	* Set up status page?
+	* Some kind of in-app notification?
+
+# Comms
+Will send an email to the affected users, maybe with a gift code
+Post this pad to our public meeting notes
+Our users tend not to follow us on social media, so posting these meeting notes there is probably not worthwhile
