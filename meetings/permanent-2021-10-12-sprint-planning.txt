@@ -1,0 +1,69 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-10-12, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-10-04-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+# Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Mithuna
+	* Jason
+	* 
+
+# Notes
+
+# Good News
+	* Spaghetti night / birthday party
+	* Weather is cooling down
+	* Chill weekend
+	* 
+
+# Open PRs and status
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Should check that web-app PRs build
+		* Should also make a ticket for that
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* PER-8449 tag test cases
+			* Mithuna will ensure sheet is in engineering drive and that Natalie has access
+			* Mithuna will talk to Kaitlyn about Tag test cases.
+		* PER-8530 Viewer of PDF can only access first page
+		* PER-8279 Rotate Google Maps keys
+			* Jason to review PR
+			* Natalie to make new ticket
+	* Blockers:
+		* https://permanent.atlassian.net/browse/PER-8530
+
+# Projects
+	* 
+
+# Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* oauth-refactoring on backend
+			* dependbot stuff
+			* fullscren metadata editor
+		* Planned this week:
+			* gmaps api key rotation
+			* onboarding page
+	* Who is deploying this week? Do we need to deploy this week?
+		* Recently: Natalie
+		* This week: Mithuna
