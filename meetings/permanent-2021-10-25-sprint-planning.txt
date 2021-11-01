@@ -1,0 +1,67 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-10-25, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-10-18-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Mithuna
+	* Jason
+	* Natalie
+
+## Notes
+
+## Good News
+	* Saw a friend from out of town
+	* Went to the arcade this weekend
+	* 
+
+## Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Natalie will take care of dependabot PRs after setting up CI
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* 8469: tests and linter both fail on pledge dashboard; cut those from scope of CI
+		* 8599 & 8608: make sure we're each on latest web-app & back-end, have updated our `.env` file with the new local key, and have rebuilt web-app
+	* Blockers
+
+
+## Projects
+	* Auth
+		* Jason will set up a meeting for this week to bring M & N up to speed
+		* Also asking for outside help in reviewing, just to be very very careful with security code
+		* Look for invitations to the FusionAuth admin dashboard👍 
+	* https://permanent.atlassian.net/browse/PER-8530
+		* Mithuna will write down what she's tried so far and share
+
+
+## Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* Remove wordpress (needs image rebuild)
+			* Share to self check
+		* Planned this week:
+			* Share to self front-end message
+			* Login via FusionAuth in dev (maybe)
+	* Who is deploying this week?
+		* Recently: Cristina & Mithuna
+		* This week: Mithuna, and maybe Jason later
+
