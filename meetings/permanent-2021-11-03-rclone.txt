@@ -1,0 +1,28 @@
+2021-11-03 rclone checkin
+Cristina, Karl, Jason, Robert
+
+Hiring: going to have Dan on this project for a little while; not for the full contract, but enough to do some up-front research and maybe lay some groundwork
+    expect him to start some time next week
+
+Agenda, reviewing previous meetings
+Goal of this meeting: more technical what's been done, what's coming up
+Make sure the work we're doing is matching the contract's scope of work, and/or adjusting the scope as needed
+
+Lean toward having a concrete progress report by mid-January -- ideally a demo, but if not then slides showing what we've learned, where we are, etc.
+
+Dean would like a demo in 2, maybe 3 months
+    Plan to have a plan by our next meeting
+    Will work with Dan
+
+Robert has a preference for a mid-January demo.
+
+Cristina update
+
+    fixed a bunch of critical issues around deployments - automating more steps, making future silent breakage a "can't happen" scenario.
+    Determining scope of duplicate-files issue: Cristina is writing a script for this.  Not done yet.  Will test it on dev first, as it will likely take a long time (hour or so?) to run on prod.
+
+    Next up: task-runner scalability:
+    2 paths we could take: either figure out how to autoscale on AWS (the infra work we did before helps here, making it easier to spin up new instances), or get the task runner out of AWS entirely and run it on, e.g., Heroku or something.  Second way might be faster and ultimately cheaper therefore (dev time being the big cost, outweighing the Heroku > AWS raw cost relationship -- and that dev-time advantage would be ongoing, b/c controlling scalability in Heroku is easier in general).  On the code side: we need to validate that having multiple instances of the task running running works correctly, and that if one of them ends abruptly that doesn't result in things being dropped on the floor.
+    Cost/benefit of up-front format conversion (which is done by task runner btw):
+
+    Robert and Andrew have done some research on it.  Video conversions were the worst.  From a code perspective, it's ridiculous that we're currently making conversions that users can't access these days (users used to be able to, but they can't anymore).  Software improvement could come in two steps: ripping out unused stuff, and moving what remains to download time; the latter is the harder lift.
