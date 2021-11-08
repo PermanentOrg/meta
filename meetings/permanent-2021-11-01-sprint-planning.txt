@@ -1,0 +1,62 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-11-01, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-10-25-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Mithuna
+	* Jason
+
+## Notes
+
+## Good News
+	* Diwali fest
+	* Finished the original Twin Peaks seasons + movie
+	* Bought some art!
+
+## Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* 8599 & 8608: make sure we're each on latest web-app & back-end, have updated our `.env` file with the new local key, and have rebuilt web-app - the three of us have done!
+			* Jason will follow up with Cecilia and Cristina
+	* Blockers
+
+
+## Projects
+	* Auth
+	* https://permanent.atlassian.net/browse/PER-8530
+	* Open sourcing web-app - after the GMaps API key deletions, Natalie can push the button in GitHub!
+
+
+## Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* New client code for tag API endpoints (but no user-facing change yet)
+		* Planned this week:
+			* Login via FusionAuth in dev
+			* Installing Jest as dependency of web-app (also no user-facing change)
+	* Who is deploying this week?
+		* Recently: Mithuna
+		* This week: Jason, assuming the FusionAuth PR gets merged
+
