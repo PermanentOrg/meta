@@ -1,0 +1,64 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-11-08, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-11-01-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Jason
+	* Natalie
+	* Mithuna
+
+## Notes
+
+## Good News
+	* Arkansas trip 
+	* Relaxing weekend: Finished Twin Peaks and Animal Crossing
+		* oh also web-app is public
+	* Got some of my art prints!
+
+## Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+	* Jira board: https://permanent.atlassian.net/browse/PER
+	* Blockers
+
+
+## Projects
+	* Auth
+	* Duplicates
+	* PDFs
+	* Link from Publish
+
+## Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+			* New client code for tag API endpoints (but no user-facing change yet)
+			* Installing Jest as dependency of web-app (also no user-facing change)
+			* Dependabot PRs on web-app
+			* cron performance improvement
+		* Planned this week:
+			* Login via FusionAuth in dev
+			* More dependabot PRs on web-app
+	* Who is deploying this week?
+		* Recently: Mithuna
+		* This week: Natalie, plus maybe Jason if the FusionAuth PR gets merged
+
