@@ -1,0 +1,34 @@
+2021-11-09 Duplicate names
+Invited: Cristina, Jason, Kaitlyn, Robert
+
+What do we want to do about duplicate files and folders?
+
+# Existing data and scope of problem
+Cristina will run the script in production and save its output somewhere secure and sharable, and link it here
+
+First, need some clarity: 
+I assume that duplicate file/folder names only matters if the files/folders exist on the same path, i.e. if you try to put Chickens in the Birds folder where a Chickens already resides, we need to change the file/folder name (provided that the original Chickens and the new Chickens are both a file or both a folder, but not if one is a file and the other a folder).
+	* If I try to put the file Chickens in /Birds/ and /Birds/Chickens is already there, we rename it to /Birds/Chickens-1
+	* If I try to put the folder Chickens in /Birds/ and /Birds/Chickens/ is already there, we rename it to /Birds/Chickens-1/
+
+# Possible migration solutions
+	* Gate rclone functionality on an archive having no duplicates
+		* seems systematically overly complicated
+	* Forcibly rename files
+		* seems completely reasonable, can base on timestamp of upload, i.e. the dupe with the later stamp gets an appended value
+	* Delete files with duplicate names and identical md5sum hashes
+		* almost certainly not
+	* Merge duplicate directories
+		* same as delete IMHO
+	* Build out UI to alert users of and allow users to resolve the problem
+		* too complex
+			* probably not MVP, but I have had some members say that they'd like to replace files with the same name. It'd be nice to be able to allow the choice.
+	* Email comms (either "fix your stuff" or "we fixed your stuff")
+		* why not both! +1
+		* As part of an effort to upgrade the system, we are changing how we treat duplicate file and folder names. Your archive contains one or more files with the same name. To remedy this solution, we will be appending a helpful suffix to your duplicate filenames to help you tell them apart. You have until this day to make the correction yourself. Please contact support if you need more help.
+
+See also this slack thread where I documented a discussion with Nathalie Rayter: https://permanent-org.slack.com/archives/C01ARGVA849/p1628031472000800
+
+# Preventing future duplicates
+How do we want the system to behave when someone attempts to upload an identically named file? or create an identically named folder? Or upload nested folders-and-files that would cause duplicates with existing folders or files?
+	* auto-append a sequential integer value, i.e. IMG1234.jpg becomes IMG1234-1.jpg
