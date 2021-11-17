@@ -1,0 +1,37 @@
+2021-11-16
+rclone checkin
+Jason, Cecilia, Cristina, Karl, Robert, Dan
+
+Agenda
+	* Cristina: https://permanent.atlassian.net/browse/PER-8610
+		* What file path do we want to expose to users via rclone?
+			* upload file name vs display name
+			* This is what we need to deduplicate
+			* Option: just use the original file name
+				* This would lose some information if the person uploaded a picture that was named as IMG_123.jpg and renamed it to a more descriptive name
+				* We don't currently have any way for original filenames to be changed; if we can't deduplicate
+				* For duplicates on original file name, add (1), (2), etc as browsers do on duplicate downloads
+			* Option: use the display name + detected mimetype as the file extension
+				* Or the original file extension from the uploadFileName
+			* Option: a new database field with a no-duplicates-allowed file name that is used for downloads
+				* Keep upload filename as is
+				* Check against the new field when syncing
+		* CONFIRMED: download file name uses original filename (confirmed in the UI, might want to validate in the backend as well)
+		* THE PLAN:
+			* record.downloadFileName (or whatever new field name) will hold the name used for rclone and other sync'ing/downloading situations.  It must be unique, as a full path.
+			* record.uploadFileName will continue to preserve the original uploaded file name.
+			* When those two can be the same, great!  Often they can be.
+			* When they can't be the same, then record.downloadFilename gets a " (2)", or " (3)", etc suffix.  Because record.downloadFileName is always unique, we can always identify the correct unique underlying file when handed a record.downloadFileName.
+				* If someone actually uploads an original file with a name like "image (2).jpg", that's okay: this all still works.  We just need to make sure, when we are generating a downloadFileName for some other file, that it doesn't clash with any existing names -- which, of course, we would always do.
+			* None of this affects or is affected by displayName.
+			* None of this affects or is affected by underlying content-ID (S3-bucket-oriented hash ID) name.
+			* Somebody please verify that Karl has recorded this plan accurately. +1
+	* Dan: quick update on what research has shown / brief convo about STFP vs WebDAV?
+		* WebDAV is possibly more vulnerable
+			* note that either of these protocols could be done in a way that's insecure (or secure!)
+		* Photographers have asked for WebDAV
+		* Q: what do BackBlaze/other backup services use? (Backblaze uses API keys)
+		* We want to use OAuth in the future, so if only one of those has this option then we'd prefer that
+		* "Plain webdav does not support modified time"
+			* https://rclone.org/webdav/#modified-time-and-hashes
+		* Are there specific other integrations we want to prioritize?
