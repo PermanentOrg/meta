@@ -1,0 +1,70 @@
+node-sdk design
+
+How do we want the node-sdk to work? It is of growing importance: TheirStory, HyperAudio, web-app, and soon the rclone service
+
+https://permanent-org.slack.com/archives/GC4998R1R/p1636757494181500
+https://staltz.com/api-design-tips-for-libraries.html
+
+We're parsing out responses for clients, but not soon enough for internal work
+
+Object orientation? OO is less popular these days; functional is more idiomatic JavaScript
+	Let's have a bake-off!
+
+Brainstorming
+	* Concepts / entities
+		* Archives
+			* Title, avatar, banner, description, other metadata
+			* Membership
+			* Public vs private
+		* Records
+			* Files - strongly related but distinct
+			* Metadata
+				* Locations
+		* Folders
+			* Metadata
+				* Locations
+			* Child Items
+		* Users
+			* Preferences
+		* Tags
+		* Notifications
+		* Storage / quota
+	* Relationships
+		* Users have permissions on archives
+		* Archives have permissions on records/folders
+		* 
+	* Actions / operations
+		* CRUD (though not fully implemented in the SDK)
+		* Copy, move
+		* Publish (is secret copy)
+	* Misc
+		* Sharing
+			* Record to an archive
+			* Folder to an archive
+		* Integrations?
+
+It should be easy to iterate through files / folders
+The design of the node-sdk should not constrain the design of the API
+The node-sdk should be legible to partners (i.e. follow best practices / norms and be predictable)
+The node-sdk should be easy to change on our side
+Ideal: VOs only exist internally and never appear in the user-facing part of the SDK
+
+Other concerns:
+	* We have users; this could be a breaking change
+	* Test runner is not in as good a shape as we'd hoped
+		* https://jestjs.io/docs/migration-guide
+		* https://codedaily.io/tutorials/Migrating-Ava-to-Jest
+
+Next steps:
+	* Let's move forward with https://github.com/PermanentOrg/node-sdk/pull/31 without resolving deep structural issues in the entire sdk
+	* Publish to npm
+		* We'll start with 0.something.something
+	* Bakeoff:
+		* Choose our technical challenge(s)
+			* Create a folder & upload some files
+			* Publish set of records and folders
+			* Publish random item from My Files
+		* Mock up two different versions of what this would look like -- object-oriented and functional
+		* Evaluate how easy they are to use
+		* Ask partners what they would want
+	* 

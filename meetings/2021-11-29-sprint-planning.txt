@@ -1,0 +1,92 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-11-08, 12:30pm Pacific
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2021-11-01-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Cecilia
+	* Mithuna
+	* Jason
+	* Dan
+
+## Notes
+Five weeks before the end of the year/quarter; this sprint and the next one.  What isn't accounted for in these two sprints that we've committed to as part of our quarterly goals?
+
+## Good News
+	* Forced my team to dnce without me
+	* Got my covid booster shot💐
+	* Baked some nice bread for... TURKEY SANDWICHES (omg I just realized I haven't eaten lunch yet so I get to eat a turkey sandwich after this call)
+		* https://twitter.com/slifty/status/1465026014531264516
+		* Oh I also have decided... after 5 years of a terrible terrible office closet I'm going to pull the trigger on some barn doors (to hide the closet, of course)!  Go Go cyber monday! yay
+			* http://www.basicinstructions.net/basic-instructions/2017/3/21/how-to-make-a-recommendation
+		* Civilization 6 is only... $8 on steam right now
+	* ok true I also get to eat a turkey sandwich after this call
+	* New laptop coming soon!
+		* WOooooooooo!
+
+## Open PRs
+	* GitHub: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg
+		* Mostly quick.  Dependabot PRs need to be merged.
+		* Mithuna now has https://github.com/PermanentOrg/back-end/pull/2, moved from GitHub, and needs to address the comments that existed on the original bitbucket PR
+	* BitBucket: https://bitbucket.org/dashboard/pullrequests?section=all&workspace=permanent-org
+		* Cecilia to move https://bitbucket.org/permanent-org/back-end/pull-requests/122/document-updated-verification-code to GitHub
+		* 
+	* Jira board: https://permanent.atlassian.net/browse/PER
+		* PER-8681 and PER-8680 are to follow Natalie's PR for HyperAudio
+		* Dan is going to create tickets for his sftp/webdav work and next steps
+			* Dan To Ask: I'd normally put those in the appropriate github repo; do we tend to do that or do we keep our tasks in jira (or do we duplicate)?
+                        * Answer: Put them in GitHub.  We may need to add a GitHub Projects board.
+		* Note that Natalie has tickets in the node-sdk repo that we should discuss
+			* 8620 and 8621 are the most relevant Jira tickets; add those to the sprint in place of 8648
+		* Mithuna
+			* Priority this week is 8530 - Cecilia to pair on Weds
+			* Comments to address for 8630
+			* 8647 relies on 8630
+	* Blockers
+		* Dan needs Jason's help with AWS!
+        
+## Projects
+	* Auth
+		* OAuth in node-sdk
+			* SDK will no longer have the cookies from a session once we start using OAuth
+			* Jason will do another bakeoff/pseudocode thing
+				* might be an argument for OO because we could construct relevant objects with the token
+					* "Client" has credentials when constructed (oauth client id and secret)
+						* "getUserToken" takes the creds
+						* Possibly set a default user token?
+							* default may be the wrong metaphor -- but basically allow the dev to specify which user they are working as for a given session.  Maybe sessions are the right metaphor actually?  You can "generate" a session (using your credentials) for a given user, that returns a session object which is what you use to make ALL the calls.  So the root SDK object only has one "api" method (which is basically "startSession") and that returns an object which can do all the *actual* Api calls (as a given user).  A dev can create any number of session objects (so this still covers the manage-500-users-at-once case) but they can also just do the one user at a time.
+					* "LoggedInUser"/"Session" has a token when constructed and can make requests
+					* Difficult because we need to keep these entities separate
+				* Idea: look at how we use the AWS SDK in the upload-service
+				* Implications for web-app: send the token with every request by keeping it in localStorage?  Or keep session data on the server still?
+    
+## Deployments
+https://permanent.atlassian.net/wiki/spaces/EN/pages/13303819/Deployment+Process
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What is going out this week?
+		* Ready now:
+		* Planned this week:
+			* zip?
+			* New Relic transactions?
+			* maybe Sentry stuff on web-app
+	* Who is deploying this week?
+		* Recently: Jason
+		* This week: Natalie, Mithuna if the transactions PR gets merged
