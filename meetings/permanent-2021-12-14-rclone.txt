@@ -1,0 +1,45 @@
+							Permanent Engineering Meeting (rclone), 2021-12-14
+
+Attendees: Fon, Cecilia, Robert, Dan, Cristina, Jason, Karl
+
+Agenda
+	* Dan's Design Doc
+		* https://docs.google.com/document/d/1mYMTJ5uE2MJ_GbvobhCXSFB8-N0Gd8_hfipQK96noqM/edit#
+		* Discussion of WebDav vs SFTP
+		* Cristina: why does this sit in front of S3?  Following the same pattern we use in web-app
+		* Persistent connections: loss of connection would affect both/either
+		* Guiding principles from Robert:
+			* Put privacy and security ahead of functionality.  Privacy and security are primary.
+			* Bias toward getting it right the first time -- move slow and don't break things.
+			* Primary rclone use case is a "Pro User" use case, e.g., "Here's the client app, and here's a tutorial."  (We'll want to explore ways to build on rclone to connect with other systems, but right now we're not sure it'll be the best way to do that anyway.)
+		* DECISION: SFTP
+	* Duplicate folder/file name update
+		* Fon is working on this
+		* Could change the database so it has a unique constraint for downloadFilename, should be unique on the name AND folderId (as in, a unique multi-column index of [name, folderId])
+		* TODO: Cecilia to give Fon permission to push new branches to the GitHub repository.
+		* Issue: https://permanent.atlassian.net/browse/PER-8610
+	* Taskrunner scalability
+		* PR https://github.com/PermanentOrg/back-end/pull/9
+		* Autoscaling for taskrunner - this is harder than we thought
+			* Can't skip conversions for audio/video because we *use* the conversions in many cases
+			* Hard because we have two queues per environment (high priority and video) and in fact all the tasks aren't even accounted for within these queues
+			* To do this:
+				* Everything would have to be in SQS (not true currently)
+				* Add a service to monitor the queue length for both queues
+				* When length > n, trigger CloudWatch alarm which causes the autoscaler to spin up more taskrunners
+				* Change generate_inventory.sh to handle multiple machines
+			* What Cristina actually can do
+				* Clean up taskrunner
+				* Refactor generate_inventory to let us spin up multiple taskrunners
+
+
+
+
+
+
+
+•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•
+::: (\_(\ ...*...*...*...*...*...*...*...*...*...*...*...*...*...*...*...* :::
+*:  (=' :') :::::::: Happy Birthay Cecilia ::::::::::::: :*
+•.. (,('')('')¤...*...*...*...*...*...*...*...*...*...*...*...*...*...*...* :::
+¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.

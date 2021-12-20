@@ -1,0 +1,51 @@
+Robert, Cecilia, Cristina, Jason, Dan, Karl
+
+Cristina's update:
+	* ID'd duplicate files based on `uploadFilename`
+	* Added results to the spreadsheet; there are more duplicates
+	* Moved backend repo to GitHub
+	* Unreviewed PR(s)
+	* Remaining work: feature dev in backend repo to automatically rename files and populate the new downloadFilename field (And a one-time script to populate those for existing records)
+	* Cristina excluded shares from her script but we probably need some product input on how rclone handles shares...does it pull down shares or not?
+		* Proposal: don't include shared files ("shared with me") for rclone
+		* Situation: Dan creates a folder and shares it with his family so they can also upload to it.  Would you he only see the files he'd added when he rclones it down?
+		* Robert assumed we'd focus on private files
+		* What the current report script includes and excludes: https://github.com/PermanentOrg/duplicate_file_paths/blob/main/find_duplicate_files/models.py#L20
+		* Can we make names globally unique, or will we rely on shares appearing in their subdir?
+	* Make progress toward open sourcing back-end repository
+	* Permanent needs a way to manage secrets outside the code
+		* Cristina has recently been looking at Vault
+			* Karl sniffs that OTS rolled our own :-).  NOTE: That is not meant as an implicit recommendation that anyone else do the same.
+	* To decide this we need a better estimate
+	* Decisions: topskim?  
+	* Cristina to take a look at auto-scaling (the work she started a year ago)
+	* TODO: Dan to figure out how rclone handles strange filenames
+
+Dan checkin:
+	* Recommending SFTP.  Existing project (link?) has already done the implementation and emits events.
+		* WebDAV has a bigger surface area
+		* This will have bugs, but we wouldn't have to write the whole thing
+		* (please someone help write a note about Dan's locking point, I missed the beginning) (I think WebDAV has locking and we wouldn't obey locking commands -- they'd be no-ops for Permanent)
+	* SFTP speaks files, not web transactions.  SFTP does not tell rclone when the file is done being transferred.  Just streams bytes until it's done.
+		* Quirks article: http://benno.id.au/blog/2017/01/11/sftp
+	* Host/deploy/maintain: SFTP has to use the ssh port, will be more complex.  Cristina can help set up EC2/Terraform infrastructure for this
+	* TODO: Dan to write a design doc
+	* Question: should this just speak S3 too?
+		* S3 doesn't have file metadata, just a UUID
+		* Wouldn't save us much
+	* 
+
+Karl:
+	* 2 new engineers joining soon
+		* Fon (Monday!)
+			* Sometimes Fenn (his initials)
+			* He is quite available in Central Time despite being abroad
+			* Idea: Cristina can help familiarize him with back-end (since he'll need to translate some of my existing work into code for the backend)
+		* Kavya (Jan. 15th or so, pending negotiation)
+
+Cristina's To Do List
+	* Autoscaling < has a pretty clear idea of what to do but doesn't sound exciting
+	* Onboarding Fon < not optional
+	* SFTP infra deployment < more in line with the understanding of the project
+	* Open sourcing back-end < strong preference
+		* Vault for secret management

@@ -1,0 +1,16 @@
+Where does the front end need to call the backend?
+	* auth module of web-app
+	* check on both login and signup for whether the person has any archives
+		* if not, redirect to onboarding flow (/onboarding for now)
+		* CHANGE? response from login and signup should *not* respond with an archive on the new flow.
+	* in onboarding flow:
+		* TODO: check that the logged-in user does not have archives (verification)
+		* create new archive component is already wired up to backend!
+		* TODO: wire up the "get list of pending archives" (Cecilia to find the endpoint for this)
+
+What we need to do:
+	* Natalie: Implement design 
+	* Cecilia: Allow a/b testing on the backend
+	* Cecilia: Allow response from login/signup with no archive on backend (PER-8552)
+	* Natalie: Verify that the logged-in user doesn't have any archives ( to prevent navigating to this page)
+	* Natalie: Wire up "list of pending archives"
