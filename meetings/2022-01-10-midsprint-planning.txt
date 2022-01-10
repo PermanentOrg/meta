@@ -1,0 +1,71 @@
+Sprint Planning                          
+2022-01-10, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot                          
+
+# Purpose 
+Engineering team gets in sync on this week's goals and this sprint's status                         
+
+# Outcomes
+* Review current status of some active tickets involved in recent work                          
+
+# Process (Agenda)
+ * Share any good news ya' got!
+  * Individual Issue Items
+  * Open PRs
+  * Deployments
+  
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Jason
+	* Mithuna
+	* Dan
+	* Fenn
+
+## Good News
+	* Cecilia: football (?!)
+		* omg which one -- there were so many good ones (the Steelers journey was so intense, for those who don't know they needed (A) to win, (B) a terrible team to lose, and (C) ALSO A GAME TO NOT TIE AND IT LITERALLY WAS TIED UNTIL THE LAST SECOND AND ALMOST ENDED IN A TIE OH MY GOSH)
+	* Jason: bikes
+	* Dan: 
+		* God I don't know.  270 out of 4500 people in my school district got COVID and I'm freaking out. :(( sorry.  Every day we're questioning whether we should send J to daycare.
+			* idk still...
+				* OH I THOUGHT OF IT!  MY DOTFILES.  I am spending way too much time on my dotfiles again; and my terminal and background are so pretty now -- https://github.com/slifty/dotfiles -- I'm slowly getting my computing setup fun and not grindy
+	* Mithuna: My dance classes started again.. It is a meditation for me..  <-- <3 <3 three cheers for personally meditative acts!
+	* Natalie: relaxing, productive weekend
+		* https://blogs.studentlife.utoronto.ca/lifeatuoft/files/2018/03/horse.jpg
+	* Fenn: Weird, I am thinking hard about "what's the good news this week" 😂, however my country is hosting the AFON but I am not excited. Oh just remembered I fixed a SAML configuration bug on some SSO configuration I am doing! Major breakthrough :)
+
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Jira
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+PER-8616: We can write new tests in Jest but they run in Karma (which is what the CI currently uses).  So we can wait to use Jest in CI until we're ready to switch over completely.  Yes.
+
+## GitHub Issues
+https://github.com/PermanentOrg/sftp-service/issues
+	* Dan's plan is to build a clean implementation of SFTP for now and Fon can jump in on this repo when he's ready to go
+	* Optimistically, SSH2 could be demo'd on Friday (?!).  Doing auth but not against Permanent.
+https://github.com/PermanentOrg/node-sdk/issues
+	* Hyperaudio needs two things by the end of the week:
+		* Documentation on authenticating to the SDK (using FusionAuth).  Jason will write this as part of his work on the oauth branch.
+		* Ability to refresh a CDN link.  Mithuna points out that we may store the expiration date in the database, so they might be able to use that rather than relying on the response from the link (if it's expired or not).
+https://github.com/PermanentOrg/ep_permanent_exporter/issues
+
+What other repos have issues that we're working on?
+
+https://github.com/PermanentOrg/probe-deleted-files/
+
+
+## Notes
+	* Do node-sdk design conversation today instead of MLK Day? (And general rescheduling for the holiday)
+		* oops yes
+	* FYI on profileItem: experience team is planning to talk about what they want on the archive profile first
+		* Also Cecilia needs to make a (hopefully) small change for the mobile team
+	* I (Cecilia) am working on building epics and assigning tickets to next sprints; more to be discussed on Thursday
+		* Homework before Thursday backlog review:
+			* Jason & Natalie to fill in sdk redesign epic
+
+## Deployments
+* Cecilia probably on Weds, so far just a typo fix for web-app
