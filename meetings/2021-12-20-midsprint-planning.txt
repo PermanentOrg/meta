@@ -1,0 +1,89 @@
+# PERMANENT LEGACY FOUNDATION – Permanent.org
+Sprint Planning
+2021-12-20, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+    * Review current status of some active tickets involved in recent work
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+
+# Previously, on sprint planning...
+https://github.com/PermanentOrg/meta/blob/main/meetings/2021-12-13-sprint-planning.txt
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+## Roll Call
+Add your name, role, location and prefered contact or social info for follow-up – you can select/change your color in the participants dropdown menu at the top right corner.
+	* Natalie
+	* Mithuna
+	* Dan
+	* Cecilia
+	* Jason
+	* Fenn
+
+## Good News
+	* Dan: I defeated all odds and created HOME MADE GINGERBERAD HOUSES able to withstand the decorating impact of four small children https://twitter.com/slifty/status/1472728419540606978 :clap
+		* My cousin made this: http://www.snipsentwined.com/blog/2015/12/26/final-reveal
+			* ^ amazing
+	* Cecilia: My husband returns from his business trip tonight, phew
+	* Mithuna: I survived this weekend.
+	* Am vaccinated
+	* Natalie: I made sushi for the first time this weekend and it wasn't a disaster <-- I somehow never considered this as a thing that could be... done!!!!
+		* In the "arranging" school of cooking I like this a lot: https://www.101cookbooks.com/archives/wintery-spring-rolls-recipe.html
+
+## Open PRs
+    * https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3Apermanentorg%2Fpermanent-android+-repo%3Apermanentorg%2Fpermanent-ios+
+	    Firebase dependabot PR is blocked on Cecilia fixing firebase in lower level environments
+
+## Jira
+	* https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+	* Cecilia: underestimated the FusionAuth theming work
+	* Cecilia to ask Robert about Bitwarden for Fon
+	* Dan: done with "making determination," going to make new issues in the GitHub repo for the new SFTP service
+		* What's the process around code review?  For the initial setup no need for formal review, but Dan will call out any nonstandard approaches and open PRs so we have them.
+	* Fon: local environment issues
+	* Jason: Tasks weren't captured by the current stories (but that doesn't meant they're not super important!!!!)
+	* Mithuna: how to stop taskrunner 
+	* Natalie: writing tests for manage tags in Jest!  Huzzah
+
+## Notes
+(idk where this fits in the agenda but I had a point that came up from my friends when I asked around re the functional vs OO API)
+	* "OO feels nicer"
+	* tree-shaking: nice to only put in what you need (https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking)
+	* Firebase just rewrote everything from OO (v8) to functional (v9)
+	* OO: better for client validation (i.e. can't move a record to a folder in a different archive)
+	* Natalie points out that we don't have to be purists here!  Can have objects without being fully OO
+		* Dan: auth in particular might be a good candidate for being handled through a more complex object / passed around to functions.
+	* Cecilia will schedule a meeting to create a design doc in early January
+
+Duplicates:
+	* How we do we manage deleted files?
+		* We don't get rid of deleted files from the database or cloud storage, but we want to
+		* Multistep process:
+			0.0.1. Update code to hard delete files that are newly deleted
+			0.0.2. Write and run script to hard delete previously deleted files
+			0.0.3. Update code to hard delete folders that are newly deleted
+			0.0.4. Write and run script to hard delete previously deleted folders
+		* Open question: how long a lag time between user clicking delete and things getting deleted? Probably want at least a little slack, eg enough time to schedule and run a task; might need more, and will talk to Kaitlyn tomorrow
+	* This is related because of uniqueness - it would be confusing for people to have filenames like 'File (3)' because they previously had 'File (1)' and 'File (2)'
+	* In the meantime, can prepend a unique ID to the download_filename column (for deleted items) to ensure thereare no violations of the uniqueness constraint when a file exists, hidden, in a deleted state. <-- note that if, by policy, we want to add a "grace period" for deleted files that allows them to exist for "X hours" after deletion / allow for undo, then we might consider having this be something we do long term as well.
+		* "in the trash"
+
+## Deployments
+	* What's ready?  Small things only please.
+		* https://github.com/pulls?q=is%3Amerged+is%3Apr+archived%3Afalse+user%3APermanentOrg+sort%3Aupdated-desc
+		* If Natalie finishes some small things she will deploy on Weds
+		* Question about changing the big files (Mithuna has an open PR) - would need to be run manually in each environment
+	* Who's deploying?
+		* Natalie will lead and Mithuna run her script if we're doing it
+
+## Notes for next week
+Enjoy the calm!
+

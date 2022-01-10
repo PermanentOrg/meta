@@ -1,0 +1,48 @@
+# Duplicate files and rclone
+
+Purpose: Share status and validate path forward on the duplicate files portion of the rclone project.
+
+Objective: Get experience team feedback on plan for duplicate files, especially wrt deletions.
+
+Process:
+
+	* Fon to share current status and plan
+		* Goal: Sync Permanent with their local files (and eventually possibly Google Drive, etc)
+		* One of the challenges is that Permanent allows files in a given folder to have the same name
+		* If we have two files "myfile.txt" then the second will be renamed to myfile_1.txt
+			* (I think currently: `myfile.txt_1`; we will need to fix that)
+		* We store multiple pieces of information for each file:
+			* original "uploadFilename"
+			* "displayName" by default the filename without extension; can be edited by user
+		* Plan is to add the "downloadFilename" field, defaults to "uploadFilename" but will be renamed for uniqueness as described above
+		* Context that led to this plan:
+			* Display name does not include extension; eg, uploading `resume.pdf` and `resume.doc` leads to two `resume`s in the Permanent UI
+			* There are many existing duplicates, both of folders and files
+		* Testing plan: remember to check copying and moving (i.e. cat.jpg exists in MyFiles and in Subfolder1, can I move/copy Subfolder1/cat.jpg into MyFiles and have everything work correctly?)
+		* Concern: users would probably expect the downloadFilename to match the displayName
+			* Will need to include the extension; options: use the content type we detect from the file contents, and map that back to an extension; or, use the extension of the uploaded filename (ie the last period and everything after it)
+			* Display name does not have length or character restrictions (eg `/`) (displayName is 255 chars)
+		* Option: expose new `downloadFilename` as an editable metadata field
+		* We had previously determined, based on Cristina's research, that we would not try to enforce uniqueness of display names
+	* Fon and Jason to describe the deleted files issue
+		* We know this is a problem, we want to fix it, now might be the time
+		* Kaitlyn, is there value to holding on to deleted files?
+			* The "in the trash" concept
+			* K: has not had such a support request
+			* Mithuna has seen such support requests before Kaitlyn
+		* https://permanent.atlassian.net/browse/PER-7959 Delete files as users expect
+			* Decision from Sept 2020 was to hard delete and consider a trash can later
+	* Kaitlyn feedback
+	* Support process - KB articles, etc
+		* Follow FusionAuth work plan: Prep users via newsletter then have KB articles ready to go when we launch
+
+
+
+Next steps:
+	* Kaitlyn needs to think about this some more!
+		* She will talk to a power user or two
+		* Question: what proportion of displayNames are different than the uploadFilename?
+		* Basically: what's the relationship between uploadFilename, displayName, and whatever the new unique name is?
+	* find Cristina's duplicates report spreadsheet and share with Kaitlyn
+	* Fon to investigate the scope of work to make deletion work as expected in our code going forward
+	* Next meeting second week of the year
