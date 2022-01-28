@@ -1,0 +1,75 @@
+Sprint Planning
+2022-01-24, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+* Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-01-18-sprint-planning.txt
+
+# Process (Agenda)
+	*  Share any good news ya' got!
+	*  Individual Issue Items
+	*  Open PRs
+	*  Deployments
+
+## Roll Call
+	* Natalie
+	* Mithuna
+	* Dan
+	* Jason
+	* Fenn
+
+## Good News
+	* Tested positive for covid but no symptoms..
+		* oh no!!!
+	* Dan: We might get a wood burning stove!  but the particularly nice thing is apparently there's a lot of great EPA regulation on wood burning stoves now so new ones tend to have have *catalytic converters in them*.  That means burning wood makes... WATER!?!?! also 90% less polution and cancer.
+	* It's sunny! (this is very good good news I approve)
+		* It is cloudy here all week. 😞
+		* It's always sunny here, in Philadelphia 😂
+	* Natalie: relaxing weekend, found some interesting open source projects
+	* Fenn: Still excited about my trip from the weekend
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* Fenn would like to pair with someone on https://github.com/PermanentOrg/back-end/pull/11 to sort out a query not working as expected
+		* Mithuna will pair with Fenn
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+	* Jason and Cecilia will talk about FusionAuth theming tickets
+
+## Notes
+	* Tags
+		* Backend: nothing further needs to be done on the backend
+			* Managers should be able to change tags, but as a follow-up
+		* Frontend: small changes requested
+		* Once those small frontend changes are done, we can deploy!
+	* SFTP
+		* Working on permanent-sdk is in scope for Dan
+		* Natalie has set up the permanent-sdk repo but not implemented any methods yet
+		* Dan and Natalie will pair on this
+		* Jason can help with auth stuff if needed
+	* Onboarding, aka account/archive separation
+		* Cecilia's open PR
+		* Front end must follow the PR being merged (PER-8463)
+	* S3 PDF script & tags
+		* tags need feature flags in staging and prod before deploying
+		* tags will be broken for some (small) period between deployment and database migration
+		* Mithuna will open a PR for feature flags
+		* S3 PDF script can be run any time - does not (and maybe should not?) be done as part of the initial deployment, just to minimize engineer time in a deployment window
+
+## Deployments
+	* What's going out?
+		* Tags, including a database migration which must be run during deploy
+			* Database migration is already deployed, but has only been run in dev, not staging or prod
+			* Order of running database migrations and deploying does not matter - running the database deployment command will work before or after, since the SQL script is already merged. But both need to be done, and as close together in time as possible
+		* S3 PDF script
+		* Soon, but not this week: Jason and Kavya's SSH keys
+	* Who's going to deploy?
+		* Mithuna and Natalie will pair on deployment
