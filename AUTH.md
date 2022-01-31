@@ -9,7 +9,10 @@ Permanent uses [FusionAuth](https://fusionauth.io/) as our
 
 To get access tokens, your client will need to be created in
 Permanent's FusionAuth account.  Someone at Permanent will set that up
-for you and give you a `CLIENT_ID` and `CLIENT_SECRET`.
+for you and give you a `CLIENT_ID` and `CLIENT_SECRET`.  The
+`AUTH_HOST` will also need to be set.  We use one host
+(auth.permanent.org) for prod and another
+(permanent-dev.fusionauth.io) for all other environments.
 
 ### Logging in via FusionAuth
 
@@ -43,32 +46,20 @@ $ curl -v --header "Authorization: Bearer ${TOKEN}" \
   https://example.permanent.org/api/auth/loggedIn
 ```
 
-To get one of these tokens for testing, the easiest way is to use the
-[Resource Owner Password Credentials
-Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3) flow
-to generate a token. Make sure that the client you are using is
-configured in the IdP to allow password grant authentication, and then
-call:
-
-```
-$ curl -v \
-  --request POST \
-  --url 'https://auth-example.permanent.org/oauth2/token' \
-  --header 'content-type: application/x-www-form-urlencoded' \
-  --data 'grant_type=password' \
-  --data-urlencode "username=${EMAIL}" \
-  --data-urlencode "password=${PASSWORD}" \
-  --data "client_id=${CLIENT_ID}" \
-  --data "client_secret=${CLIENT_SECRET}"
-```
-
 ### Refreshing the token
 
 The original token you receive from FusionAuth will expire.  It will
-have a refresh token as long as you request the token with the
-`offline_access` scope.  When the token expires, use this refresh
-token to get a new access token and send that to Permanent in the
-Authorization header.
+have a refresh token if you request the token with the
+`offline_access` scope and the FusionAuth client has refresh enabled.
+When the token expires, use this refresh token to get a new access
+token and send that to Permanent in the Authorization header.  We
+recommend using refresh tokens for flows that will be taking place
+without user input - e.g., a long running script.  If the user will be
+present throughout, then don't use a refresh token.  Instead, bounce
+back through the FusionAuth login flow.  For a mobile app, for
+example, the user won't see this happening since the mobile browser
+will retain the login credentials.  When necessary, though, the user
+will be prompted to log in again.
 
 ## Examples
 
