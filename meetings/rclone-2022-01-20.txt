@@ -1,0 +1,58 @@
+							Permanent Engineering Meeting (rclone), 2022-01-20
+
+Attendees: Cecilia, Kavya, Fon, Dan, Karl
+
+Agenda:
+    
+	* Roles, schedules, meetings
+		* Fon and Kavya: devs on this SOW
+		* Dan: some design and architecture, currently working on the SFTP service (and should continue since he has a lot of info about it in his head).  Also code review!
+			* Also Kavya I can transfer a ton of that knowledget ASAP to YOUR head!
+			* Yes please
+		* Mithuna (not here today), back-end engineer at Permanent
+		* Natalie (not here today), front-end engineer
+		* Robert (not here today), CEO
+		* Kaitlyn (not here today), Member Success Manager
+		* Amberly (""), Preservation Services Manager
+		* Jason Owen, (OTS) engineer (back end)
+
+	* SOW progress review
+		* Scalability: lots of data will be coming in at the same time!  Current system isn't set up to handle it.
+			* Deployment can now deploy multiple task runners (manual deployment).
+			* So, e.g., we could spin up, say, 4 task runners when a big conference is happening, but we can't handle an unanticipated spike.
+			* Also, the queue isn't smart yet about ordering.  It's not even FIFO, it just randomly grabs items.
+			* Mithuna is exploring what happens when a task runner instance gets turned off -- is it safe?
+			* No auto-scaling yet.
+			* ACTION: Karl to introduce Kavya and Mithuna so Kavya can start helping with the task runner work.
+		* Semantic fixes: Solving file name collisions requires fixing file deletion semantics
+			* Fon is finishing https://github.com/PermanentOrg/back-end/pull/11
+				* Needs automated PHP unit tests; sep PR
+			* Fon has already started reading the back-end codebase to figure out the changes he needs to make to ensure that future deletions are "hard deletes"
+				* UP NEXT: Fixing the platform so deletion works in the future (appx 4 tickets)
+					* Draft prediction: code in review by end of next week
+				* AFTERWARDS: Deal with legacy non-deletions
+					* Idea: check accession transaction count, make sure it's zero or low
+					* Idea: mark for deletion, remove from regular database (perhaps? or otherwise make impossible to reach them), wait 30 days, then run script
+		* Possible other monsters:
+			* See SFTP PR #13
+				* This isn't a monster but rather defines the shape of the SFTP API that needs to be mapped to permanent.  In particular:
+					* Symlink handling?
+						* ACTION: Cecilia and Robert to decide whether Permanent will handle symlinks or whether rclone ops will just error (or just reject) when trying to send a symlink.
+					* How do we map shared folders to a file structure (i.e., within an archive -- shared folders can be shared between different archives w/in Permanent)
+				* ACTION: Kavya and Dan to document the shared-folder problem and potential solutions
+				* Also: Archive membership
+
+	* (Question we can move to the right place later)
+		* How does the Node SDK work fit into the SOW? (for context: we're at the point of SFTP service that it's time to actually integrate with permanent)  Are there some calls for which we'll first just do the PHP call directly and swap in an SDK call later when the SDK is more mature?
+			* Answer: for now, just put in direct PHP calls, until we decide longer term
+		* ACTION: Cecilia to talk to Natalie about what this could look like - stub out SDK without calling backend but give SFTP enough info to move forward
+
+	* Auditing deleted files once hard deletion is in place.  The member experience side of Permanent relies on the current "soft delete" practice to check how many files are deleted each week.  If a user deletes a lot of files soon after uploading them, we suspect that they are having trouble with the platform and reach out to see if there's anything we can help with.   Once we start hard deleting, there won't be a way to see all those deletions in the database *unless* we set up some auditing specifically for that.
+
+References:
+	* https://pad.opentechstrategies.com/p/permanent-2021-12-14
+	* https://docs.google.com/document/d/1mYMTJ5uE2MJ_GbvobhCXSFB8-N0Gd8_hfipQK96noqM/edit#heading=h.ti7q3hdcvjm1
+	* https://github.com/PermanentOrg/sftp-service/
+	* https://github.com/PermanentOrg/back-end/pull/11 ("PER-8610 Prevent duplicate file and folder names.")
+	* The PR:
+		* https://github.com/PermanentOrg/sftp-service/pull/13/files

@@ -1,0 +1,85 @@
+Sprint Planning
+2022-02-07, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+* Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2022-01-24-sprint-planning.txt
+
+# Process (Agenda)
+    *  Share any good news ya' got!
+    *  Individual Issue Items
+    *  Open PRs
+    *  Deployments
+
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Jason
+	* Mithuna
+	* Dan
+	* Fenn
+
+## Good News
+	* Cecilia's baby did a tiny first scoot - whoa! yay growing big
+	* Nainika started her swim class. We got some snowy something.
+	* Dan: MY DOOR IS FINALLY GONE ⛔🚪
+		* Also my MONITORS ARE NOW WORKING (without needing to be left unplugged for 30m before turning them on).  It's the little victories. crazy
+	* Fenn: Figured some fun spots in town, started "food portioning" (interesting stuff lol, I get to make sure food is 50% vegies, 25% cabs and 25% protein), paid $20 for coffee I can make for less than 1 cent.
+	* Natalie: Don't feel sick and also I caught a rare "shiny" pokemon lol
+	* Jason: got a tiny monitor shipped from China
+		* I learned that apparently monitors these days are.... just... there are 20 different protocols that all use the same port and they have to match or the world falls apart.
+
+meet version (never mind we didn't need this!)
+Monday, February 7 · 2:30 – 3:30pm
+Google Meet joining info
+Video call link: https://meet.google.com/tzs-dyuz-nro
+Or dial: ‪(US) +1 608-909-0375‬ PIN: ‪434 606 950‬#
+More phone numbers: https://tel.meet/tzs-dyuz-nro?pin=8498906879061
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* https://github.com/PermanentOrg/web-app/pull/89
+		* Might be helpful to add a sleep statement to the backend
+
+## Tickets
+	* https://permanent.atlassian.net/browse/PER-8415 (removing tag feature flag)
+	* https://github.com/PermanentOrg/permanent-sdk/issues
+		* Documentation how?  Cecilia likes the idea of having docblocks that can be turned into something easy for humans to read so it's easy to document as we go
+		* Read about Docusaurus! No, a dinosaur: https://docusaurus.io/docs
+
+## Notes
+	* I'm collecting favorite SDK repositories since I think I'll be breaking ground soon. whoo!
+		* Current list of things I'm looking at for inspiration:
+			* https://github.com/aws/aws-sdk-js/ <-- kinda looking at for ANTI inspiration but...
+			* https://github.com/firebase/firebase-js-sdk/tree/master <-- mostly adding this to troll Jason because this is just so deeply (over)engineered.  It's a monorepo for their SDK components. 
+				* In seriousness it does have some good stuff, but don't worry I won't propose this having a `packages` directory and treating each component as its own thing...
+					* unless we think it'd be fun of course
+		* Any other node SDKs you use and love?
+	* Duplicates plan
+		* https://docs.google.com/document/d/13zsy2amn0AeEE_cA1gkZ9vM77acY3f3nxEkA7Rvox_g/edit#heading=h.6p4m1ymnugnw
+		* There are still a lot of questions here!
+		* Do we want to continue to allow people to have duplicate display names on Permanent?
+		* If not, is it okay to 
+
+## Deployments
+	* Manage tags updates
+	* Profile banner fix
+	* Discuss how to get around the migration -> change deployment without feature flag
+		* https://permanent.atlassian.net/browse/PER-8780 
+		* We need to be able to run a script on deploys without running it on image builds
+		* Cecilia and Jason to pair
+	* What's going out?
+		* Web-app dependency updates (#85 & #86)
+		* Jason's ssh key (and Kavya's?)
+		* Curators's access role change.
+		* Check access when user request to change banner.
+		* Curators can manage tags
+		* Remove tag feature flag code
+
+* Code freeze!  Idea is to move it later to give another week of onboarding work/testing time.  Freeze would start after the deployment window on the 24th instead of the 17th.  Jason has volunteered to help with the tricky deployment work for onboarding if it happens that week - thank you!!

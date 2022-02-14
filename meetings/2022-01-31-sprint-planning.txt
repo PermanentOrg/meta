@@ -1,0 +1,80 @@
+Sprint Planning                          
+2022-01-31, 3pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot                          
+
+# Purpose 
+Engineering team gets in sync on this week's goals and this sprint's status                         
+
+# Outcomes
+* Review current status of some active tickets involved in recent work                          
+
+# Process (Agenda)
+	*  Share any good news ya' got!
+	*  Individual Issue Items
+	*  Open PRs
+	*  Deployments
+  
+## Roll Call
+	* Jason
+	* Cecilia
+	* Natalie
+	* Dan
+	* Mithuna
+	* Fenn
+
+
+## Good News
+	* Cecilia: nice weather here! Is it sunny today?
+	* Mithuna: Watched a movie in Theaters after almost 2 years. 
+		* omg I am so jealous
+	* Natalie: played a video game all weekend
+		* Natalie what game -- My friends and I tried to game last night and got sad about how few options we felt we have for just like... gaming as a group.  (We ended up playing Don't Starve Together again but are really looking for some new things!)
+			* Pokemon Legends Arceus
+	* Dan: I just signed a contract to get SOLAR!!!!  I think it's going to cost me negative dollars?  I don't know how things work. nice
+	* Fenn : Getting a comprehensive general healthcheck tomorrow! :) 
+		* wooo! It's like the closest IRL equivalent of a fresh OS install.
+		* good to keep up with your health. 
+	* Jason: I guess in that theme, I have a dentist appointment on Friday
+	* 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+
+## Notes
+Rclone!
+	* Dan and Fon are working independently
+	* Dan caught Kavya up on SFTP progress.  K will own auth (https://github.com/PermanentOrg/sftp-service/issues/15).  
+		* Implementation will involve the SDK side as well.  Won't block on publishing the new SDK.  Jason will meet with Kavya re auth.
+		* See etherpad from Dan and Natalie's meeting: 
+			* https://pad.opentechstrategies.com/p/permanent-sdk-thoughts (thanks!)
+	* Kavya will be owning the AUTHENTICATE command in SSH:
+		* https://github.com/PermanentOrg/sftp-service/issues/15
+		* Cecilia will introduce Jason and Kavya with Dan cc'd
+	* Dan will be owning these two SFTP commands:
+		* OPENDIR: https://github.com/PermanentOrg/sftp-service/issues/17
+		* REALPATH: https://github.com/PermanentOrg/sftp-service/issues/16
+	* Fon: new draft for deletion (link?)
+		* Writing a markdown document about duplicate names strategy in SFTP repo so that we have a source of truth (top priority)
+		* Working on deletion
+	* Dan will write up SFTP installation with instructions and dockerfile
+
+## Deployments
+Tuesday: 
+	* manage tags part one (for owners): GROUP DEPLOY
+		* database and code changes
+		* feature flag in higher environments (need a PR for this; Mithuna)
+	* large pdf script
+		* Mithuna will run a test in dev today
+
+Wednesday:
+	* Run the large pdf script
+	* Add managers to manage tag page (PR?) https://github.com/PermanentOrg/back-end/blob/4e40da0521508e08dacd7ab32c15534f5a497c39/library/base/constants/base.constants.php#L381
+
+Thursday:
+	* Ideally https://github.com/PermanentOrg/back-end/pull/15, without front end changes (should be no user-visible change)
+	* Rebuild images for Jason's SSH key!
+
