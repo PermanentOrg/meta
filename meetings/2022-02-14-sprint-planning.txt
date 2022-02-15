@@ -1,0 +1,73 @@
+Sprint Planning                          
+2022-02-14, 3pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose 
+Engineering team gets in sync on this week's goals and this sprint's status                         
+
+# Outcomes
+* Review current status of some active tickets involved in recent work                          
+
+# Process (Agenda)
+    *  Share any good news ya' got!
+    *  Individual Issue Items
+    *  Open PRs
+    *  Deployments
+  
+## Roll Call
+	* Jason
+	* Natalie
+	* Dan
+	* Fenn
+	* Mithuna
+	* Cecilia
+
+## Good News
+	* Jason: I watched the Eternals movie
+	* Dan: Valentines day!  Our 6 year old wrote adorable poems for me and Lyla. <3
+		* https://alula.github.io/SpaceCadetPinball/
+	* Natalie: started working on a personal website. share link when ready!
+	* Mithuna: Had a nice outing with my friends
+	* Fenn: Still alive for my exams (starts tomorrow ends Friday).
+		* good news indeed!
+	* Cecilia: saw palm trees at a conservatory this weekend. That is a nice one. We should have a snowland here.
+		* https://comozooconservatory.org/category/como-gardens/
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* For SDK archive types: https://permanent.atlassian.net/browse/PER-8627 (removing minor functionality)
+	* back-end #15 & #20 
+		* Mainly wants more QA checks, particularly the forgot password flow
+		* Want to deploy this week so that we can test in dev
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+
+
+## Notes
+	* Natalie: onboarding update
+		* Always send share recipients through old flow
+		* Need to plan the deployment steps for this, probably with Jason
+		* Let's plan a time for C & J & N to talk about deployments - tomorrow
+	* Cecilia: mobile update
+		* OAuth & sessions; C&J talked about earlier
+	* Deployments, migrations, and downtimes
+		* Carryover to next week's meeting as a discussion item
+	* Sessions
+		* C & M to talk during their 1:1 on Wednesday; maybe C & J & M to discuss
+
+## Deployment
+	* Tuesday: 
+		* Migration fix (already merged; already taken effect, does not require an explicit deployment)
+			* Plus a comment migration so we double check?
+		* Error message change
+		* Tag feature flag code removal post
+		* MAYBE: session continues on token refresh
+		* Explicitly not the onboarding
+		* Who will deploy: Cecilia
+	* Thursday:
+		* backend of onboarding flow
+		* MAYBE: .ged files (pending new logo file)
+		* Concerns? big change, and want to do more QA
+		* Who will deploy: Cecilia

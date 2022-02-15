@@ -1,0 +1,55 @@
+2022-02-15
+Onboarding and deployments
+
+Cecilia, Jason, Natalie
+
+	1. PR #15 (Thursday) and PR #20(?)
+		* Should not affect anyone else
+	1. Front end flow in general (deploy to dev before merging for QA, first, presumably)
+		* Some work is already merged - basic page available via url hacking, but not connected to any functionality
+		* Current work:
+			* wire that page up so that accounts without archives launches the new onboarding flow. In particular, invitations lead to no new archive.
+			* Enforce URLs more strictly, to make sure users are in the next place: must be in onboard flow if no archives, can't use login page if already logged in.
+			* Users who have no archives - they were invited to another archive, deleted their default archive, and then were thrown out of the invited archive - will see the dev version of the new onboarding flow (if we merge/deploy it)
+				* There are no users in prod that currently have no archives
+				* select accountId from account a left join account_archive aa using (accountId) group by accountId having count(*) = 0;
+			* Cecilia and Jason are +1 on merging this sans styling, given that it is hidden behind url-hacking, but it's ultimately up to Natalie and Jason how to organize this
+			* Defaulting "shares" (of a file or folder) to the old flow
+			* setting up some path that always uses the new flow for testing
+			* do a hacky thing where this branch always(?) sends the simplevo with false, or maybe do some window.location silliness, or whatever - not meant to be merged
+	1. a/b testing??? (front or back end?)
+		* Defaulting "shares" (of a file or folder) to the old flow; the front end should be able to detect when a user clicks a link from such an email. There is similar functionality for public timelines!
+		* URLs for always old and new flows - query parameters
+		* Should be easy to do on the front end, and it makes the most sense to do that there
+			* This can also double as a feature flag
+		* Inviting a user to be a member of an archive will want the new flow, but for the first iteration should use the old flow - this involves back-end changes that we're not sure we can make quickly
+			* Long-term it would be better if this worked the same as other signups, but prioritization
+			* Is this legacy, unused code for the web-client? That would be great! ...oh, this might be the placeholder accounts that are created when a user invites a non-user
+			* TODO: Cecilia to test this; see when this code is actually triggered; and if it ever is, communicate when/where to Natalie
+	1. Front end styling
+		* Natalie has the designs; might need to rearrange some components due to design changes, but for the most part "just draw the rest of the owl"
+	1. QA results / updates
+		* Kaitlyn will be testing as we go
+		* How can the rest of the team support?
+			* Quicker reviews
+			* Jason (and C?) might work on part 3, if N can outline a design
+
+Thursday Feb 24 is probably the final deployment window before RootsTech on March 3-5 (thanks for putting that on the team calendar, C!)
+
+Timeline:
+	* Thurs 17: back-end#15 out
+	* Thurs / Fri: get first front-end PR to dev; alert Kaitlyn that she can start QA (though no styling yet)
+	* Tue 22: main front end changes deployed through environments
+	* Tue 22: a/b testing always set to old flow deployed through environments (Jason)
+	* Weds or Thurs: Deploy styling when ready
+	* Weds or Thurs: Deploy changes from QA if any
+	* Thurs 24: turn a/b testing to 50/50 (or whatever we want)
+		* if for some reason this doesn't happen on Thursday but everything else is finished, could deploy this week-of. but... how would that happen?
+
+Go / no go decision? Want input from the biz side - there's a risk of breaking things if we deploy week-of, but there's also consequences to not having the a/b test out for rootstech
+	* If we miss a bunch of the timeline goals, then we'll decide not to shoot for rootstech, and take the pressure off
+
+Maybe we should have a big QA session the week of RootsTech, to make sure the site as a whole is good to go?
+	* C to talk with Robert about this, and schedule if so
+
+
