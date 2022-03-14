@@ -1,0 +1,58 @@
+Sprint Planning
+2022-02-28, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+	* Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/permanent-2022-02-22-sprint-planning.txt
+
+# Process (Agenda)
+	* Share any good news ya' got!
+	* Individual Issue Items
+	* Open PRs
+	* Deployments
+
+## Roll Call
+	* Natalie
+	* Jason
+	* Mithuna
+	* Dan
+	* Fenn
+
+## Good News
+	* Dan: I bought iodine tablets in case there is a nuclear strike in Philadelphia 
+		* In actual good news -- I made some chocolates yesterday which was, as always, a very fun and very messy process! nice
+		* My monitors CONTINUE TO TURN ON when I turn my computer on. it's amazing.
+	* Its sunny this week
+	* Fenn: Cooked over the weekend after a while, hehe... 
+	* I did nothing (this is good)
+	* I made some bread
+
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+
+## Notes
+	* Onboarding, aka account/archive separation
+	* Large PDF update https://pad.opentechstrategies.com/p/per8677
+	* https://permanent.atlassian.net/browse/PER-8798?atlOrigin=eyJpIjoiYjQyZjgzNDg4ZjE3NDlmNjk0ZjNlOGE1MTlhYTExOTgiLCJwIjoiamlyYS1zbGFjay1pbnQifQ
+		* new code : probably promo code is not good idea.
+		* admin task is fine may be a script that we can run 
+	* RootsTech
+
+## Deployments
+https://github.com/PermanentOrg/meta/wiki/Releases
+	* What's going out?
+		* web-app#100: A/B Testing (hopefully)
+		* That's it.
+	* Who's going to deploy?
+		* Natalie will do
