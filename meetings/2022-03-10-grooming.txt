@@ -1,0 +1,29 @@
+2022-03-10 Engineering backlog refinement
+
+## Roll Call
+	* Mithuna
+	* Jason
+	* Natalie
+	* Cecilia
+
+## Chit chat?
+I (Cecilia) feel as though I haven't talked much to y'all this week.
+
+## Agenda
+	* Auth epic: https://permanent.atlassian.net/browse/PER-8348
+		* Goal: figure out ticket dependencies, make a burndown chart for finishing this
+		* Question for exp team: are we okay with a signup-then-login flow?
+	* Sprint overview
+		* https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3/backlog?issueLimit=100
+	* "Groomed" list: https://permanent.atlassian.net/browse/PER-8348
+	* Mobile release
+		* left hand nav
+		* fusionauth page theming
+	* Permanent SDK (looking ahead to quarterly planning for Q2!)
+	* KRs
+		* Onboarding: check!
+		* Mobile release: very close!
+		* Endpoints implemented in SDK
+		* Concurrent requests to backend
+	* Onboarding cleanup
+
