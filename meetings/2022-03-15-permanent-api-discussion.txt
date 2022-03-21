@@ -1,0 +1,48 @@
+Passing data to the Permanent API
+
+URL: https://meet.jit.si/PermanentApiaryDiscussion
+
+Attendees
+	* Mithuna
+	* Cecilia
+	* Dan
+	* Jason
+	* Natalie
+
+Agenda
+	* Review of the current data flow
+		* Client - API
+			* Client constructs and sends a RequestVO
+			* Then the backend does some magic to make that RequestVO into various PHP objects
+		* Internal API
+			* Controller methods access this->getRequestVO
+			* Some things are lists? But who knows which? Can there be multiple items in those lists?
+			* Dynamic controller method lookup
+	* Discussion of potential data flow
+		* https://github.com/PermanentOrg/back-end/issues/46
+		* https://github.com/PermanentOrg/back-end/pull/44
+			* The idea here is we can do the new thing AND the old thing side by side.
+	* Proposal: create a new data structure that contains everything about a request: URL, query string, POST data (which will often be a RequestVO), current user (AccountVO)
+		* Update API endpoints every time we need to modify or document an endpoint
+	* Discussion of legacy considerations
+		* Versioning? query parameter response=json or so?
+	* Other long term dreams
+		* Moving from www.permanent.org/api ... to api.permanent
+		* Move API from PHP to TypeScript
+			* One note: we can also aspire to creating the *first version* of the typescript API just by using the SDK; this means that the PHP api becomes purely internal (freeing us to be able to make improvements without having to think about ALL the clients, just thinking about the SDK)
+
+Decisions / Next Steps
+	* Proposals:
+		* Yes lets start passing parameters for endpoints that have a requestVO (pass parameters instead; if those parameters exist then use them, if they DONT exists then use the old / historic "RequestVO" approach.
+		* Yes lets add a flag to indicate return type; let's make it a version flag rather than a response type flag.
+		* ULTIMATE PROPOSAL: version flag should drive *BOTH* of these.
+			* Should this be a header or a URL parameter
+				* Header makes it harder to construct queries but it decoples the nature of the request from what is being requested, and we're already sending the token in a header.
+		* But then again maybe this isn't a full blown new version and really we should just have a feature flag e.g. "dontUseResponseVo=true"
+	* BONUS PROPOSAL related to root folders
+		* Let's move to having three archive attributes (one for each "child" type)
+			* this would be both at the data level / with a migration
+			* AND at the API level (ArchiveVO would be modified to have this)
+		* Let's talk to Cecilia who can then talk to Robert about what we want to do with vaults.
+
+
