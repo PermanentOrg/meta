@@ -1,0 +1,73 @@
+							Permanent Engineering Meeting (rclone), 2022-02-17
+
+Attendees: Cecilia, Kavya, Fon, Dan, Karl, Kaitlyn
+
+Agenda:
+
+	* SFTP service
+		* https://github.com/PermanentOrg/permanent-sdk
+		* SSHD question (https://github.com/PermanentOrg/sftp-service/issues/18)
+			* ACTION (continued from last week): Dan to look more closely and report back.
+		* ACTION: Kavya to sync up w/ Dan (and Jason as neede) about SFTP service's authn expectations.  She has started mapping out the code flow.
+			* Expects to have initial PRs in place by end of this week.
+		* Documenting decision to punt on symlinks, and documenting other design decisions (like our duplication-handling algorithm, what information we preserve about deleted files (see below), etc).
+			* Think of Kaitlyn as the audience -- she'll be writing user-facing documentation eventually.
+			* sftp-service root:
+				* /docs/DESIGN.md <-- with things linking to it (and it linking to things)
+				* ACTION: Fon to create; Karl to review
+
+	* SDK
+		* Type definitions merged (https://github.com/PermanentOrg/permanent-sdk/pull/10)
+		* There is a third party who wants to use it?  Do their usage needs overlap with what we're implementing in the SDK for rclone support, or do they need different stuff?
+			* ACTION: Cecilia will let Karl know, as her meeting with that third party is tomorrow morning.
+			* NOTE: Cecilia is on vacation starting next week, and then busy w/ conf stuff (for March 3-5 conf) as soon as back.
+		* Authn
+			* Status?
+			* OAuth-based
+				* Add token verification to SDK
+				* Any client can get the token, with whatever OAuth flow they want, and once they have the token they're good to go.
+
+	* Handling name collisions
+		* Design doc: https://docs.google.com/document/d/13zsy2amn0AeEE_cA1gkZ9vM77acY3f3nxEkA7Rvox_g/edit#
+			* I have a few questions related to how the plan fits with "directional sync" (may be too detailed for this particular meeting but wanted to leave the this flag for a brief discussion point!)
+			* ACTION: Fon and Dan work session to finalize both the algorithm and its documentation.
+		* Imminent conversion of the document to Markdown?
+			* https://permanent-org.slack.com/archives/C01ARGVA849/p1644531854384849
+		* File deletions
+			* References:
+				* https://permanent.atlassian.net/browse/PER-8610 (Fon : 8610 and PR11 are for name collisions not file deletion)
+				* https://github.com/PermanentOrg/back-end/pull/11
+				* https://permanent.atlassian.net/browse/PER-7959 (File deletion)
+				* https://github.com/PermanentOrg/back-end/pull/21
+					* QUESTION: Why is the description of this PR still mentioning a trash can feature?
+			* What information to preserve when an object is deleted?
+				* Note that the files fields to preserve have not yet been determined.  Some context: "record" == "file" (folders are a separate thing); a record entry points to multiple files (like the resultant conversions from the uploading of an original image).
+				* ACTION: Cecilia to come back with the files fields.
+				* DECISION: The list of record fields to preserve is:
+					* record.recordID
+					* record.archiveID
+					* record.uploadAccountID
+					* record.size
+					* record.thumbStatus
+					* record.fileStatus
+					* record.status
+					* record.type
+					* record.processedDT
+					* record.createdDT
+					* record.updatedDT
+
+	* Task runner scalability improvements
+		* What happens when a task runner instance gets turned off at a random time?
+		* Karl's ping of Kavya and Mithuna about this:
+			* https://permanent-org.slack.com/archives/C01ARGVA849/p1644531697504879
+			* Mithuna has explained task runner to Kavya
+			* ACTION: Kavya to follow up with Mithuna about results of Mithuna's experiments, and to be very active about all task-runner-related followups.
+				* The dev tasks here are separable, so Mithuna and Kavya should be able to divvy it up well.
+
+References:
+	* Previous meeting: https://pad.opentechstrategies.com/p/permanent-2022-02-10
+	* SFTP Service: https://github.com/PermanentOrg/sftp-service/
+	* SDK: https://github.com/PermanentOrg/permanent-sdk
+		* Note: Node-SDK is on the way out, and permanent-SDK is on the way in
+	* Supporting Rclone at Permanent (Google Doc): https://docs.google.com/document/d/1mYMTJ5uE2MJ_GbvobhCXSFB8-N0Gd8_hfipQK96noqM/edit#heading=h.ti7q3hdcvjm1
+	* Handling Conflicting File & Folder Names | Permanent Backend (Google Doc): https://docs.google.com/document/d/13zsy2amn0AeEE_cA1gkZ9vM77acY3f3nxEkA7Rvox_g/edit#

@@ -1,0 +1,41 @@
+Mar 15, 2022 | TaskRunner Sync | Dan | Mithuna | Fon
+Objective : Understand the general functioning of Permanent taskrunner, current issues, programmed updates and scalibility. 
+Attendees : Dan Schultz, Mithuna, Fon E. Noel
+
+Notes on Structure / code
+	* We do have two task runners
+		* This means there are two instances of the task runner service which are actively picking up tasks.
+	* Tasks are triggered either through  queue (aws sqs) or as part of cron job.
+	* Cron jobs every minute, hourly, daily, weekly and mothly queue : https://github.com/PermanentOrg/back-end/tree/main/task-runner/scripts.
+		* What is the nature of the "cron" tasks -- would they be better as queue tasks.
+			* Examples...
+				* Syncing with third party tools (e.g. zoho)
+				* System monitoring at a regular interval
+				* System cleanup
+		* We may want to consider a shift in architcture so that there is no such thing as a cron "job" in task runner, but instead there is a "task generator" that creates tasks on a cron schedule (and the task runner system picks up the jobs like they would pick up any other type of job).
+			* We may want to also consider keep the cron tasks as cron task but separating them from the concept of task runner.
+	* We have around 38 different types of task
+	* The code lives in https://github.com/PermanentOrg/back-end/tree/main/task-runner
+
+Notes on Scalability / needed changes
+	* What is an idea of the number of task that Taskrunner can currenlty handle? :
+		* Currently unknown; we can investigate (perhaps checking in aws, or server checks)
+			* Maybe Cecilia knows
+		* We can also stress-test it
+	* How does scalability currently work?
+		* We have two task runners now; in the past we believe there were multiple copies but they did NOT all pick up the same tasks (so there was only vertical scalability in the sense that we could add task runners for each TYPE of task).  This should be verified.
+	* Are there any open issues for Taskrunner currently?
+		* We currently don't believe that the scalability is working as expected
+			* We should look into what this means.
+		* https://permanent.atlassian.net/browse/PER-8230
+		* Autoscaling project : https://github.com/PermanentOrg/infrastructure/projects/1
+
+Action Items
+	* Fenn and Dan to look at the task runner code base a bit
+	* We will need to create AWS auto-scalability configuration (once the code is ready for auto scaling)
+	* We may need to create better monitoring around the current queue pressure.
+	* We may need to make modifications to the task-runner code base
+		* in order to support auto scaling
+		* in order to ensure proper task release / pickup / etc
+		* in order to support better monitoring
+
