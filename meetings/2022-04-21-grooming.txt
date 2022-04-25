@@ -1,0 +1,24 @@
+2022-04-21 Engineering Backlog Refinement
+Present: Cecilia, Jason, Mithuna
+
+
+	* Velocity report
+		* We're committing to much more than we're achieving
+		* One option is to change to 3-week sprints, which would help mitigate the impact of long PR review times
+		* Noting that we have some estimated stories in the current sprint that we don't intend to get done
+		* Working more as a team, rather than a bunch of individuals: once one person finishes "their" stories, start helping on teammates' stories instead of pulling in future work
+		* Prioritization and PR review time to avoid carryover and swingy velocities
+			* Proposed priorities: emergencies (management direction, helping member success team, hotfixes, etc), review teammates' PRs, address review comments on own PRs, completing open stories, starting new stories
+			* Balancing review time amongst the team
+		* Estimates SHOULD include estimated impact on team for reviewing & testing changes; changes that are quick to dev but slow to review/test should be bigger
+	* User backlog: https://docs.google.com/spreadsheets/d/1_N9ZSy_IIKCv774NYHeybbN5cxc8bnrHezkB56wYBzU/edit#gid=0
+	* Upgrade all the things
+		* MySQL upgrade process -> tickets
+			* https://permanent.atlassian.net/browse/PER-8498: Jason will turn this into an epic, make subissues, and estimate them
+		* Debian
+			* Would be convenient to do this before MySQL -> Postgres
+	* Backlog: https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3/backlog?issueLimit=100
+		* Goal of 7 points/person
+		* Mithuna to create ticket for taskrunner audit and put in sprint 180
+		* hevc video issue
+	* Liam! Sprint 180
