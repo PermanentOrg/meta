@@ -1,0 +1,26 @@
+2022-05-06 Backlog Grooming
+
+Purpose: Review open and missing tickets for completeness
+
+Outcome: Have a clear shared plan for the next sprint.
+
+Process:
+- Review backlog tickets that have been sorted into sprints
+- Review KRs
+- Discuss missing tickets and prioritization
+
+## Notes
+	* Database rollout missing tickets
+		* Estimate of when this will be ready to test in dev?
+			* Need to schedule testing time with Kaitlyn
+		* What other work needs to be done?
+			* WP page
+			* Test routing changes on AWS
+			* Warning in app
+				* https://permanent.atlassian.net/browse/PER-8851
+	* This sprint
+		* Remove some of the FusionAuth work?  Login page is the main todo, and it's done; move self-service into backlog
+		* Natalie will help review #108
+			* See https://github.com/PermanentOrg/back-end/pull/83#issuecomment-1098503153
+	* Liam onboarding
+	* 
