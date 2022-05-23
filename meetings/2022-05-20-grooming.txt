@@ -1,0 +1,34 @@
+2022-05-20
+Permanent Backlog Grooming
+
+
+	* KR reminder
+	* User backlog for the quarter: https://docs.google.com/spreadsheets/d/1_N9ZSy_IIKCv774NYHeybbN5cxc8bnrHezkB56wYBzU/edit#gid=0
+	* Donations work and followup
+		* Add a push notification
+		* Security fixes
+	* Overview of this sprint and what we're likely carrying forward
+	* 
+	* Renaming family to group!
+		* https://permanent.atlassian.net/browse/PER-8900 (Liam's new epic)
+		* Other clients:
+			* Check with node-sdk users to see if they're using the type field
+			* Check with Dan and Fon to see if this affects the definition of Archive in the permanent-sdk
+	* What's already in next sprint?
+		* Jason : need help
+			* record hard delete
+				* New ticket for Liam: Delete this 
+			* old upload code. Delete bad uploads
+				* https://permanent.atlassian.net/browse/PER-8252
+				* https://permanent.atlassian.net/browse/PER-8260
+					* Is this still doing any work?  Should be checked as part of the ticket!
+		* 2nd category of help
+			* test code that is working 
+			* opening PRs with not testing done
+			* Liam would like to do the testing and he will ask questions in slack if feels blocked.
+		* Danger: Jason needs to move forward and the amount of code that needs to be removed / changed is too great for him to finish completely if we want to hit our db upgrade goal.
+		* MySQL to PDO should be in one go as methods are interdependable.
+
+	* Groomed label: https://permanent.atlassian.net/issues/?jql=status%20in%20(%22In%20Progress%22%2C%20Open%2C%20%22Pull%20Request%22)%20AND%20labels%20%3D%20groomed%20order%20by%20created%20DESC
+	* If we have time, ticket about mysteriously publishing to two places: https://permanent-org.slack.com/archives/C01ARGVA849/p1653059484319329
+		* 

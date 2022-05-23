@@ -1,0 +1,24 @@
+Discussion on : https://permanent.atlassian.net/browse/PER-8807
+
+Reference KB article: https://permanent.zohodesk.com/portal/en/kb/articles/roles-for-collaboration-and-sharing
+
+Initial ticket : Curators can move files, which is fine, but need to be disallowed from moving them into Public specifically. But curators should be able to move files from one public folder to another.
+
+Then Jason asked if cuartors can unpublish and how this should work with Apps folders https://github.com/PermanentOrg/back-end/pull/80#issuecomment-1111541793
+https://github.com/PermanentOrg/back-end/pull/80#issuecomment-1112624545
+
+Kaityln's response was 
+https://github.com/PermanentOrg/back-end/pull/80#issuecomment-1113452216
+My understanding
+	* we don't want Curators to move/copy files from different workspaces but they should be able to move/copy inside each workspace(private,public,apps).
+
+Now Jason is wondering  "If we care about more than just crossing the public border, this is no longer about publishing but rather about changing workspaces. If so, we should change 
+	* the name of the access permission, 
+	* the name of this helper method, and 
+	* the check it's doing, 
+because as written it will allow curators to move a file from a private folder to an app folder.". https://github.com/PermanentOrg/back-end/pull/80#discussion_r876439685
+
+Considering all these questions, I think we should have a disucussion and clear the ticket so that I have clarity on what to do. 
+
+
+
