@@ -1,0 +1,30 @@
+2022-06-16
+Backlog grooming
+
+# Roll Call
+	* Cecilia
+	* Natalie
+	* Mithuna
+	* Liam
+
+# Notes
+	1. Database migration!
+		1.1. https://permanent.atlassian.net/wiki/spaces/EN/pages/2031321089/MySQL+-+PostgreSQL+Migration+Plan
+		1.2. https://permanent.atlassian.net/browse/PER-8498 (epic with all the related tickets!)
+	2. Bigger backlog overview
+		2.1. Wait until July / after the database is done
+		2.2. Though no Mithuna :(
+	3. Timezones, quickly?
+		3.1. Front-end would need to add a new dependency
+		3.2. Back-end needs to not have its own personal list of timezones
+		3.3. Natalie thinks it's a good idea to *have* timezones, though - much nicer to show people times in their own timezone
+			3.3.1. Can we just let the browser take care of it?
+		3.4. Maybe we should learn something about archival best practices around time/date?
+	4. Q3 goal ideas
+		4.1. Cecilia's ideas:
+			4.1.1. Finish upgrades
+			4.1.2. File deletion
+			4.1.3. Separate microservices onto their own servers
+			4.1.4. Sign up through FusionAuth
+			4.1.5. Session unlocking (cont.)
+			4.1.6. Plan/start move away from PHP

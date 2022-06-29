@@ -1,0 +1,53 @@
+Sprint Planning
+2022-06-21, 2:00pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-06-13-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Cecilia
+	* Liam
+	* Mithuna
+	* Natalie
+	* Fenn
+
+## Good News
+	* Mithuna: Nainika had her first ballet recital. 
+	* Cecilia: First lake dip!
+	* Natalie: Went to the record store and also I learned how to solve a rubik's cube thats a nice skill
+	* Liam: Went to a film festival to see a friend's film debut. which one?
+	* 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Fon's race condition fix: will pair with Cecilia on Friday if not figured out before then+1
+	* Organizing sprint by priority
+	* Cecilia: in and out on Wednesday and Thursday this week
+
+## Deployment
+	* Natalie will do on Wednesday (thank you!)
+	* Cecilia will do next week
+
+Fon : Let me type here, since I wait for reviews on some issues, I circle through those two. Deletion and ownload names
+
+

@@ -1,0 +1,62 @@
+Sprint Planning
+2022-06-13, 2:00pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-05-23-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Natalie
+	* Cecilia
+	* Mithuna
+	* Liam
+	* Fenn
+	* Dan
+	* Jason
+
+## Good News
+	* Cecilia: Saw a stupid movie (new Jurassic World)
+	* Mithuna : Cousin and kids were in town. Enjoyed some quality time with them. Watched a movie. 
+	* Natalie: Not sick anymore
+		* Wait actual good news: I'm finally getting my tax refund after doing my taxes like 4 months agoyay
+	* Liam: Spent a lot of time reading this weekend (Anathem by Neal Stephenson)added to my list
+	* Fenn: Got a new monitor and a transit deskto (sending photos in the chat) and oh I forgot a logitech keyboard-mouse and mouse
+	* Dan: Everything Everywhere All at Once came out to streaming so I finally got to see it! on netflix?
+		* It's about kung fu + sci fi + multiverse a woman who owns a laundromat and has to do her taxes
+	* 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* #159 options https://permanent-org.slack.com/archives/GC4998R1R/p1654809249331289
+		* We like option B since it's more self-contained, though we should still think more about careful order of operations to avoid further race conditions
+	* #200 - see discussion in PR, we are okay for now (not blocked)
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Pulled in PER-8773 to this sprint and moved PER-8851 out since it's unlikely to be needed this week
+	* Unticketed work: mobile login not giving an error for incorrect creds (?)
+	* Database:
+		* Moving from Jason to Liam
+		* Part of that work is estimating the day/week we will be able to do the switch on dev
+	* Test cleanup (thanks Liam!)
+	* Invitations discussion https://permanent.atlassian.net/browse/PER-8899
+
+## Deployment
+	* Mithuna will do on Wednesday, Cecilia will be the backup
+
