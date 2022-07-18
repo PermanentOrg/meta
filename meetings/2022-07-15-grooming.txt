@@ -1,0 +1,42 @@
+2022-07-15
+Backlog grooming
+
+# Roll call
+	* Cecilia
+	* Liam
+	* Natalie
+
+# Notes
+	* KR overview
+		* Thanks for signing up to be reporters!
+	* Deletion: https://permanent.atlassian.net/browse/PER-8970
+		* This is probably closer than I originally thought
+		* Question for experience team: should we remove Facebook from user-visible "Apps" at this point?
+	* Mobile sharing: https://permanent.atlassian.net/browse/PER-8960
+		* PER-8969 could be a good ticket for Liam to work on / pair with Natalie on as he starts doing more front end dev
+	* Upgrades: https://permanent.atlassian.net/browse/PER-8498
+		* I have been falling down on this one but intend to at least do PER-8935 today
+	* Directives: no epic yet
+		* Design doc: https://docs.google.com/document/d/17OsOkvzZ1eN-clGVbyYV0ceF-afcxy0HwSmkW93bJvk/edit#
+			* I need to ~circle back~ with the experience team on what they consider "MVP" here
+			* Note back to need for admin portal; admin role!  This also came up for featured archives, as an aside
+		* Pass through endpoints in PHP
+			* Least amount of PHP code is to have clients continue to call the PHP API but we don't want that
+			* Clients can call new TS API (omg)
+			* TS API calls database, BUT a separate *schema* to give it some separation from the rest of the db (so that no table is being altered by both TS and PHP APIs)
+			* Actually don't need to pass through since these are totally new endpoints and (a) new table(s)
+		* Use existing infrastructure from microservices?
+			* for notification-service, we forked upload-service: https://github.com/PermanentOrg/notification-service/commit/fe007c966f008d491083c7bfe85b919080369e04
+			* These are not a full backend; were always intended to be called from our main API
+			* Research needed!
+		* What should we call the new repo? We like the idea of a Cool Name.
+			* Should discuss with Amanda / full team
+			* Name proposal: "stela" https://en.wikipedia.org/wiki/Stele. Sounds cool, references commemoration, endurance over time, and also a pun on "monolith", since this service is planned to be monolithic. Could also be spelled "stele", which is more standard but less clear how to pronounce
+	* FUSIONAUTH
+		* Currently we signup through the backend
+		* Want to just call FusionAuth! Then after we have a FusionAuth user, call the backend and make an account, start a session, etc, then go to new onboarding
+		* Front-end: https://permanent.atlassian.net/browse/PER-8812 (need to fill this in)
+			* Does FusionAuth expect to send a newly created user back to the client?
+			* Also need to write up the client-side sequence of events for the mobile team
+		* Back-end: https://permanent.atlassian.net/browse/PER-8800 (could be broken up, but basically: create a new endpoint that expects to receive a token and a fusionauth user and calls some existing methods to create a Permanent account)
+		* FusionAuth signup pages need to be themed (Natalie will make a ticket for this)
