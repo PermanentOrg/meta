@@ -1,0 +1,60 @@
+Sprint Planning
+2022-08-15, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-08-08-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Liam
+	* Maybe Dan?
+	* Fon
+
+## Good News
+	* Cecilia's toddler (!) can toddleAwesome!
+	* Fon: Got a lot of sleep! I did not even drive a friend drove me around!
+	* Natalie: Went on a longer bike ride
+	* Liam got engaged \o/ yayy!
+		* WOOOOO!
+	* Dan's in Martha's Vineyard (again!)
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Public gallery - Natalie has a question for Cecilia pending
+	* Rclone waiting on us?
+		* Special characters in download name
+			* slashes break rclone (for instance)
+		* Larger planning goals
+			* auth?
+			* scalability on down shouldn't be an issue but would be interesting to check
+		* 255 seems approved; should we merge it?
+			* https://github.com/PermanentOrg/back-end/pull/255
+	* Where did things land with that v2 error message issue
+		* One thought -- we could add a new "public object" field to the error object which is used to generate the response.
+		* Proper validation reponses for v2 : https://github.com/PermanentOrg/back-end/issues/262, Fon should sort that out this week!
+		* Or fix what we send back in responses for endpoints that we update to use v2 so that we're not exposing sensitive information (but no, because all endpoints have v2 responses!)
+
+## Deployment
+	* Natalie will do Wednesday (Cecilia can do iOS manual testing as needed)
+	* Liam ran some db queries to fix tags for a certain power user (and communicated with Kaitlyn about it)
