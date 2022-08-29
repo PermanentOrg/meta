@@ -1,0 +1,41 @@
+2022-08-26
+Permanent Backlog Grooming
+11:30a CT / 9:30a PT
+
+# Roll Call
+	* Cecilia
+	* Liam
+	* Natalie
+
+# Notes
+
+	* Database rollout timeline
+		* Plan times for dev and staging
+			* Need to warn Kaitlyn ahead of time so she can plan to spend some time testing in each environment
+			* Dev: Monday! Start after staff meeting
+				* Just Cecilia and Liam can do
+			* Staging: Weds the 31st
+				* Need to warn the mobile team when we take down staging for the migration
+				* Ask VSP to run through test list after migration is done
+				* All of us should participate in this one
+		* Would like to turn on the banner a week ahead of prod. Do we have the exact wording ready?
+		* Let's pick a night for prod migration
+			* Put up banner on Thursday deploy, Sept 1
+			* FYI, "users by time of day" info here: https://analytics.google.com/analytics/web/#/report-home/a117528189w174245515p173475521
+			* https://support.google.com/analytics/answer/1010249?hl=en (the "time of day" is in Central Time)
+			* Plan on Thursday, Sept 8, at 6PT/8CT
+	* Other tickets:
+		* Debian upgrade https://permanent.atlassian.net/browse/PER-8824
+			* Needs MySQL cleanup tasks to be done
+			* Does this also need a whole rollout epic?
+			* No, but it did need a ticket for the PHP upgrade
+		* Move/copy into and out of shares: https://permanent.atlassian.net/browse/PER-8990
+	* Idea for ABQ: each of us could bring something to pair on / discuss (Thursday morning)
+	* Admin role (if we have time)
+		* public gallery featured archives [ideally a button appears on a public archive for admins' eyes only that says "Feature me" or something] [or just have an "x" on the public gallery, or a UI where they can preview, or something like that]
+		* nonprofit type archive
+		* promo codes
+		* (creating other admins)
+		* manual data fixes
+		* Note there is an existing admin role in the backend that we might be able to pick up and use (as long as we know who is assigned to it currently, if anyone)
+	* Roadmap: https://docs.google.com/spreadsheets/d/1IvhNoIC1tL79GVUG-TXbS2sWnARZuC6tI4PuKeA2m_c/edit#gid=1535884376
