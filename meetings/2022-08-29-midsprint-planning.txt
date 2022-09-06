@@ -1,0 +1,72 @@
+Sprint Planning
+2022-08-22, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-08-22-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Natalie
+	* Liam
+	* Fon
+	* Cecilia
+	* Dan
+
+## Good News
+	* New Taylor Swift album announcement \o/
+	* Yeah Cecilia, I feel much better and I cooked today (earlier in the morning See : https://www.google.com/search?q=cameroon+okro&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjy5qO-5ez5AhWeVvEDHZfWC2kQ_AUoAXoECAEQAw&biw=1920&bih=980)
+	* Liam: ran a tabletop horror RPG (Call of Cthulhu) this weekend, have some ideas about how to improve the scenario
+		* Slightly related -- on our drive home from vacation last week we stayed overnight in Providence and the hotel we were in was hosting NecronomiCon!
+	* Dan: I'm full of good news today.
+		* Ida's first day of 2nd grade today!  I don't have to think about Kubernetes for at LEAST another week.  I managed to create a spy themed puzzle hunt for sixteen 5-7 year olds / Ida's birthday party and it pretty much worked!  Solar panels are being installed this week!  Our back wall has been completely replaced! wow!
+	* Natalie: got a new bike
+		* also along the lines of new Taylor Swift, there's a new Carly Rae Jepsen album coming out the same day apparently
+			* How did you unfold it and ride home? I mean it was the shopping cart
+				* https://us.brompton.com/bikes/how-to-fold thanks
+		* omg really?!
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Short week for Cecilia
+	* rclone update?
+		* Can maybe let Dan and Fon go early if we get through this
+	* Dev migration to PostgreSQL is in progress as we speak!
+		* We'll be spending a lot of time on testing the migrations in dev and staging this week
+	* Can we get the PR opened for the downtime banner?
+		* What did we decide about a banner for the marketing site?
+	* Downtime banner as a separate deployment on Thursday? Might be better to just get it out a day early instead of doing a double deployment BUT would be nice to test staging before committing to a downtime date. Let's discuss.
+		* The banner has a "turn on" date so we can deploy the data on Wednesday and if we want to undo it *then* we'd do a separate deploy, but if all is well then we don't need to
+
+## Rclone Updates
+	* Dan has been working on making auth real! SSH can support MFA, so *rclone* needs to do so as well. IF rclone can't, though, can we tell FusionAuth to ignore MFA? Do we want to?
+		* https://github.com/PermanentOrg/sftp-service/issues/15#issuecomment-1230742013
+		* Considerations: we currently don't let new Permanent users set up 2FA, so we might be okay with compromising on 2FA here as well, BUT this would be longer lived. 
+		* Also need to figure out how to bypass it (assuming we can)
+		* Cecilia and Permanent team to discuss and get Dan an answer by the end of this week.
+	* Fon : I made some progress on the research concerning deletions of cached thumbnails, I have a WIP commit however I have not succeeded. I stumbled on a Stack overflow issue that mentioned deleting signed-cached cloudfront URLs is not possible I don't know if that applies to what I am doing I would find out:
+		*  https://stackoverflow.com/questions/38980769/is-it-possible-to-invalidate-or-revoke-an-aws-cloudfront-signed-url-after-it-has
+		* Can we change the expiration date? (Haven't read the SO link yet)
+	* I am currenlty looking at encoding unwanted characters in downloadName and generate downloadName for legacy records in Parralel with deletions since the deletion work speed depends on me figuring out the correct thing that works.
+## Deployment
+	* It's Cecilia's turn. We'll do dev and staging as a group to migrate staging database (assuming all goes well on dev this afternoon). Time permitting I'll carry on to prod during the deployment window on Wednesday.
+		* Community call is happening on Weds but won't use any of the environments
+
