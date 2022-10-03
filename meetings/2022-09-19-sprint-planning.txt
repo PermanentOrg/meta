@@ -1,0 +1,50 @@
+Sprint Planning
+2022-09-19, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot Meet today: meet.google.com/qxz-kbcv-smt
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-09-12-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Liam
+	* Fon
+	* Dan
+
+
+## Good News
+	* Cecilia: Put in mums in my windowboxes - hurray fall!
+	* Liam: Played some Magic, and also Traveller (a tabletop space RPG)
+	* Natalie: Went on a trip to Tucson, AZ
+	* Dan: Great british bakeoff has started yay!
+	* Fon: Nothing extra buuhhhh I did find a low-bandwidth setting on Jitsi that does help with meetings loool. By the way the pad wars is a new thing too 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+ 
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Bug week (Prue gif?)
+	* folder/getWithChildren will now only return one level of children instead of grandchildren etc. That should work fine for the SDK.
+		* https://github.com/PermanentOrg/permanent-sdk/blob/main/src/api/__tests__/fixtures/getFolderVo/folder.json is what the SDK expects to get back from that endpoint, fyi
+	* This week's  rclone goal: make a deployment plan for SFTP service! (That way Dan can work on it while we're in Albuquerque next week)
+
+## Deployment
+	* Liam will do probably Wednesday
