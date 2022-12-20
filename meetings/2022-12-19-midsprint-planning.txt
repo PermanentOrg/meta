@@ -1,0 +1,64 @@
+Sprint Planning
+2022-12-19, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-10-31-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Cecilia
+	* Mithuna
+	* Dan
+	* Natalie
+	* Fon
+
+## Good News
+	* New linux OS
+		* xrandr for monitors, thanks Natalie!
+	* Cecilia: snow snow snow
+	* Dan: holidays are starting to ramp up!
+		* Did I already share that our solar panels finally activated?  If not, that's exciting!  Started December 1st. super
+	* Fon: Just another weekend
+	* 
+
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* Long list but mostly small
+	* Expecting new ones from Dan that would be good to turn around quickly but he will be able to move forward regardless
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+- PER-9090 is the unclaimed ticket that is unrelated to the custom metadata work that Natalie is doing
+
+## Notes
+	* Passing multiple data objects for deleting multiple Tags: it should work?
+		* Confirmed that this works for delete tag <3
+	* running downloadname script
+		* Remember to check against root folders
+		* Also on creation of root folders they need a downloadname!
+		* Fon, if you're looking at this: I am hoping/anticipating that you are running the downloadname script on dev anytime you're at your desk so that we can continue to chew through it
+	* Node 18!
+		* Now the active version! Node 14 is EOL in April
+		* upload-service
+		* notification-service
+		* permanent-sdk
+		* donations-firebase
+		* And in general, back to the upgrade conversation for Debian !
+
+## Deployment
+Holding off on deploying to prod this week

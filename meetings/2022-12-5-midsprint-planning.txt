@@ -1,0 +1,58 @@
+Sprint Planning
+2022-12-5, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-10-31-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	*  Cecilia
+	*  Natalie
+	*  Liam
+	* Mithuna
+	* Fon
+
+## Good News
+	*  
+	*  
+	*  
+	* 
+
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+	* Fon PRs
+		* downloadName script is ready for re-review after Fon finishes running it in dev
+	* Liam PRs
+		* The one in devenv is the core of the stela work in local
+	* Dependabots
+		* Cecilia will do decode-uri-component across a few repos
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	*  FusionAuth
+		* Cecilia will draft a response to them re the trustChallenge problem, Liam will review
+		*  Liam has a possible path forward that he will open a PR for
+
+
+## Deployment
+Mithuna, with Cecilia assisting as necessary - Thursday
+
+## Advent of Code
+
