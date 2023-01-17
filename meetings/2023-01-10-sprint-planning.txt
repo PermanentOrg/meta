@@ -1,0 +1,99 @@
+Sprint Planning
+2023-01-10, 1:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2022-11-21-midsprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+        
+## Roll Call
+	* Mithuna
+	* Liam 
+	* Cecilia
+	* Dan
+	* Natalie
+	* Fon
+
+## Good News
+	* Mithuna:  Did a larvel project after so long
+	* Liam: The current rainstorms in Southern California will produce wonderful wildflower blooms in a few months
+	* Cecilia: book came in at the library
+	* Fon: Went offgrid, using V-SAT for internet.congrats
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios
+
+	* Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-author%3Aapp%2Fdependabot+
+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Let's free Dan and Fon as early as possible, so: what do you need from us for SFTP stuff?
+		* Can do the minimum on edge cases for creation
+		* Status of folder downloadName on dev
+			* So far, it has normalized about 2500 folders, from 6900 we should be left with about or slightly above 4000 folders now. The script is still running, this should be from a total of about at least 6 sessions each averaging 3 hours
+				* So it has taken 18 hours to do 2500 folders?Yes, seems like it.
+		* Any needed reviews?
+			* Not at the moment
+		* Devenv bugs:
+			* https://github.com/PermanentOrg/devenv/issues/58
+			* https://github.com/PermanentOrg/devenv/issues/57
+			* Mention Stela in documentation
+		* Upload file size: https://github.com/PermanentOrg/sftp-service/issues/48
+			* Need to make sure that S3 won't charge us/the user for reserved but unused space, in this plan
+	* Q1 2023 to dos
+		* Split up CRUD endpoints into separate tickets for legacy contacts and directives themselves
+
+	* Repo consolidation work:
+		* Close Bitbucket account
+			* We have 1 active repo on BitBucket (email). Would need to move that to GitHub and set up CI there. Also get Kaitlyn set up with the new remote.
+			* Decide where to archive other repos (if they weren't moved to GitHub already)
+			* Figure out how to close the account!
+		* Consolidate repos
+			* Various scripts: migrate-permanent-auth0, migration-permanent-fusionauth, duplicate_file_paths, probe-deleted-files (and archive)
+			* upload-service and notification-service (into stela)
+		* Investigate repos
+			* https://github.com/PermanentOrg/sqs-count-custom-metric ?
+			* fs-php-lite?
+			* ep_permanent_exporter (possibly to archive)
+			* vis-timeline
+		* Archive repos
+			* .github
+			* pledge dashboard (and remove deployed copy)
+			* ios-autocomplete (confirmed with mobile team)
+		* Repos to keep (12) (could consolidate some of these too, most likely)
+			* functional test
+			* fusionauth templates
+			* stela
+			* meta
+			* sftp-service (or should this be part of the stela monorepo?)
+			* permanent-android
+			* permanent-ios
+			* permanent-sdk
+			* devenv
+			* web-app
+			* infrastructure
+			* back-end
+		* Move TheirStory to new SDK
+			* archive node-sdk and test-node-sdk
+	* https://permanent.atlassian.net/browse/PER-9093 (public ish share link)
+	* Custom metadata ready to deploy? No, needs to be cleaned up, put in PR, merged, etc
+
+## Deployment
+It looks like Liam's turn aiming for Tuesday (today)
+
