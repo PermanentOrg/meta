@@ -1,0 +1,17 @@
+13 January 2023
+Q1 planning in more specifics
+
+	1. Email updates: https://permanent.atlassian.net/browse/PER-9112
+		1.1. This is reasonably urgent so the exp team can start tracking, but most of the tickets are very small.
+		1.2. Groomed and scheduled
+	2. Change password bug: https://permanent.atlassian.net/browse/PER-9116 (quick one)
+	3. Public share links: https://permanent.atlassian.net/browse/PER-9093
+		3.1. Add concept of "public or not" to share links themselves (in the database)
+		3.2. Change endpoint (which?) to understand the idea that some share links are public
+			3.2.1. And if the share link is public, return more info - the largest size thumbnail?
+				3.2.1.1. Perhaps just add the entire record to the response here to avoid the secondary call with proof-of-public-share-link attached. Actually it's here!
+		3.3. 
+			3.3.2. Click on the thumbnail (in preview) and instead of popping up "log in" or whatever, make another call to record/get that passes the share link along as an authentication (ish) mechanism to avoid people guessing the record id and calling this endpoint with the "this is from a public share link, I promise!" addition
+			3.3.3. Is it easy to do this for photos (i.e., if we're already passing the largest thumbnail size)? Could we do that as a start and treat other kinds of records differently?
+		3.4. Never "finish" the share - this is essentially just a big preview and it will never end up in the recipient's archive (unless they do have an account...in which case it works like a regular share link?)
+	4. Stela deployment: https://permanent.atlassian.net/wiki/spaces/EN/pages/2063990785/How+Should+a+New+Deployment+System+Look
