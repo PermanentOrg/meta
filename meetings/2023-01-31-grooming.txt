@@ -1,0 +1,24 @@
+Backlog grooming
+2023-01-31
+
+## Topics
+	* Ticketing and estimating front-end tasks better
+		* What to do?
+			* Do we want tickets to be deployable or parallelizable?
+			* Could do subtasks on a ticket instead of epics with stories
+			* What about the PR organization part?
+				* We want to look into finding a tool that can isolate components so they are testable/clickable without being deployed
+				* If we can do that, then let's merge subtask PRs straight to main. If not, then we'll make PRs onto a feature branch.
+				* As Natalie (or whomever) works on tickets that build on earlier work, she'll branch off her branch and rebase on main once the earlier PRs are merged
+		* https://permanent.atlassian.net/browse/PER-9098
+		* https://permanent.atlassian.net/browse/PER-9101
+	* Directives look-ahead (non stela deployment work)
+		* https://permanent.atlassian.net/browse/PER-9095
+	* Team changes
+		* Picking up Mithuna's work (notably Retool)
+		* Need to build a more explicit front-end backlog of tickets ready to be worked that don't need backend changes
+		* And it would be helpful to have a list of front-end tickets that *are* waiting on backend changes
+	* To be continued...
+		* directives table/schemas
+		* directives front end tickets
+		* "ready for work" front end backlog
