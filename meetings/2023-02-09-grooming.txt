@@ -1,0 +1,16 @@
+2023-02-09
+
+Continued from https://pad.opentechstrategies.com/p/2023-01-31-grooming
+
+	* Is there a tool for testing individual components in Angular?
+		* Natalie will look
+			* https://storybook.js.org/docs/angular/get-started/introduction
+	* Anticipating next sprint:
+		* https://permanent.atlassian.net/browse/PER-9101
+			* Should (probably) be split further. The "no plan" version requires a read endpoint for legacy contacts
+		* https://permanent.atlassian.net/browse/PER-9148
+			* This might include https://permanent.atlassian.net/browse/PER-9102
+			* We talked a little about this last time but didn't make any notes in the ticket. Let's do that!
+		* https://permanent.atlassian.net/browse/PER-9107
+			* https://bitbucket.org/permanent-org/email/src/dev/bitbucket-pipelines.yml
+	* https://permanent.atlassian.net/browse/PER-8718

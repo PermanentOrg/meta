@@ -1,0 +1,79 @@
+Sprint Planning
+2023-02-06, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2023-01-30-midsprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+
+## Roll Call
+	* Cecilia
+	* Liam
+	* Natalie
+	* Dan
+	* Fon
+
+
+## Good News
+	* Dan:
+		* I crushed my family in a game of Monopoly for a second time.
+	* Cecilia: Skied in my first race \o/
+	* Fon:
+		* My friend dressed in a fancy way, and I drove him around sitting in the back sit pretending he was president all along.
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-repo%3APermanentOrg%2Fvis-timeline
+
+	* Note I removed vis-timeline and ep_permanent_exporter from the list in anticipation of archiving them
+	* Thanks everyone for doing dependabots!
+	* Is this ready for re-review? https://github.com/PermanentOrg/infrastructure/pull/112
+	* https://github.com/PermanentOrg/back-end/pull/401 tests are failing for a weird reason
+	* https://github.com/PermanentOrg/web-app/pull/183 - webapp dependabot
+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* What do Dan and Fon need at the moment?
+		* Cecilia has reviews pending for Fon
+		* Dan is set for now
+		* Cecilia and Fon to pair on test failures
+	* Directive table migration: https://permanent.atlassian.net/browse/PER-9099
+		* triggers:
+			* trigger id
+			* directive id (unique for now)
+			* type:
+				* admin (no other fields)
+				* date (additional field: date to execute)
+				* inactivity (additional field: time of inactivity)
+				* complex
+					* ???
+	* Reset password?
+		* Reset after forgot password doesn't exist in web-app
+	* Large file upload (multipart upload with presigned urls: https://permanent.atlassian.net/browse/PER-8510)
+	* stela load-balancing/nginx
+		* Ideal future world: everything is behind nginx in EKS
+		* Real world:
+			* Option 1: set up EKS with a static ip (this would be an NLB) and add it to the existing load balancer (might not work with Terraform)
+			* Option 2: take EKS' load balancer and add our existing rules to it (via Terraform)
+			* Option 3: give stela its own subdomain (api.permanent.org) sounds like this one
+				* Potential issues: if we need to share cookies (which we won't, because stela will be stateless), CORS (need to include the right headers in stela, which should be standard for API that expects calls from other domains, but we just need to remember)
+		* Also, two or three clusters? Two.
+
+## Deploy
+Liam aiming for Tuesday
+

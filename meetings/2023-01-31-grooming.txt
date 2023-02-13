@@ -19,6 +19,9 @@ Backlog grooming
 		* Need to build a more explicit front-end backlog of tickets ready to be worked that don't need backend changes
 		* And it would be helpful to have a list of front-end tickets that *are* waiting on backend changes
 	* To be continued...
-		* directives table/schemas
+		* invite code reporting: https://permanent.atlassian.net/browse/PER-9150
+		* Uploading files larger than 5gb: https://permanent.atlassian.net/browse/PER-8718
+		* directives table/schemas: https://permanent.atlassian.net/browse/PER-9099 (waiting for Liam)
 		* directives front end tickets
 		* "ready for work" front end backlog
+		* mobile question: renaming multiple records to be implemented on client side on server side? (VSP-939)
