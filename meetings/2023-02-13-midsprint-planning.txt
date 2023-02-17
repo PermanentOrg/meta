@@ -1,0 +1,51 @@
+Sprint Planning
+2023-02-13, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2023-02-06-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+
+## Roll Call
+	* Liam
+	* Cecilia
+	* Fon
+
+
+## Good News
+	* Cecilia's new phone is half set upHooh! Got a new phone?! Android or iOS?
+	* 
+	* 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-repo%3APermanentOrg%2Fvis-timeline
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Fon will share some errors he's getting on signup locally
+	* Admin auth on stela discussion
+		* Lots of ways to authenticate from Retool, including OAuth!
+		* FusionAuth will have an admin application, users will log in to that
+		* Retool can pop up a login to FusionAuth if we want (then use the redirect uri, Cecilia thinks, to send back the right token to Retool)
+		* Then an admin endpoint will require the user to have authenticated through the admin app in FusionAuth
+	* Directives planning - some tickets are in the epic but not yet in sprints.
+
+
+## Deployment
+	* Natalie
+	* Maybe hold off on this because of welcome email changes? (to confirm with Kaitlyn)
