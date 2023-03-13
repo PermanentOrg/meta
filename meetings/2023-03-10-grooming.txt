@@ -1,0 +1,36 @@
+2023-03-10
+Backlog grooming
+
+	* Andrei onboarding plan
+		* Schedule intro
+			* hi / how are you / experience / what is Permanent
+				* Angular and TypeScript experience specifically
+			* Repo overview
+				* send Andrei links
+			* Natalie gives web app walkthrough (link to guidelines)
+			* Back-end setup overview
+			* Backlog / first couple of tickets
+		* Web-app walkthrough
+			* Note that we'll also need to support him getting the backend running, presumably
+		* https://permanent.atlassian.net/issues/?filter=11113
+			* status in ("In Progress", Open) AND labels = front-end-backlog order by created DESC
+		* Some quick starters:
+			* https://permanent.atlassian.net/browse/PER-8925
+			* https://permanent.atlassian.net/browse/PER-8926
+			* https://permanent.atlassian.net/browse/PER-8668
+			* Slightly bigger: https://permanent.atlassian.net/browse/PER-8829
+
+
+
+
+	* Directives
+		* https://permanent.atlassian.net/browse/PER-9152
+		* https://permanent.atlassian.net/browse/PER-9154 (API)
+			* we have create and read so far
+			* edit doesn't exist yet
+			* For directives QA we will bypass the legacy contact check but the code will still be there and it will be testable in Storybook
+	* Reset password - how to pull in the environment url? is this approach too hacky?
+		* https://github.com/PermanentOrg/web-app/commit/a450cce5778f757e423f54950b5792ad8ae6b755
+		* should make the FA url an "optional secret" with the dev version being the default value and can set the prod version via GH secret. Thanks! (src/optional-secrets.ts)
+	* Note from Robert:
+		* during mobile grooming we discussed the possibility of bringing bulk metadata editing into the web app and legacy planning into the mobile app next quarter. this is good for parity but also there was some convo about adding (bulk? all?) metadata editing support into Stela being something collaborative accross the eng_team and Andrei since it's typescript

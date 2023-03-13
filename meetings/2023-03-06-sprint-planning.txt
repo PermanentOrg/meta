@@ -1,0 +1,62 @@
+Sprint Planning
+2023-03-06, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2023-02-28-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+
+## Roll Call
+	* Natalie
+	* Cecilia
+	* Liam
+	* Dan
+	* Fon
+
+## Good News
+	* Cecilia: Went to the zoo and saw tiger cubs (tiger teens really) in the snow
+	* Natalie: Went on a bike ride with friends this weekend
+	* Liam: Assembled a roof rack for my car (but did not yet put it on the car)
+	* Dan: In an attempt to watch movies, we watched banshees of inisherin -- good movie, definitely leaves an Academy Awards aftertaste.
+	* Fon: Went for my friends engagement party
+	* 
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-repo%3APermanentOrg%2Fvis-timeline
+- What's the next step on SSH statuses? (I see you closed this now so maybe moot)
+	(answering in text for the record) -- there is none, the new statuses don't exist in the version of SFTP that the ssh2 library (and most of the world) implements, so we can't use them!
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Rclone checkin first
+		* Blargh
+			* I had to open a PR to upstream types to fix a bug I caused (short story, the ssh2 library supports v3 of the SFTP protocol, I had introduced status codes to the type library that were added in a later version).
+			* Caching probably won't solve our deeper problems related to the "processing" state of a file.
+		* For the service to respond with the expected response, Permanent needs to return:
+			* file size of the original file
+			* download url of the original file
+		* Initially, we can poll for n seconds
+		* capitalized extension breaks displayName (the extension isn't stripped out)
+			* downloadName relies on this
+			* Fon is fixing displayName logic
+	* Liam is conferencing for most of the sprint, so aiming for ~16 points instead of 21
+	* Need to add points to a couple tickets tentatively in Sprint 199
+		* Moving https://permanent.atlassian.net/browse/PER-9133 forward and Cecilia will ask about those designs
+
+## Deployment
+Cecilia will do Thursday morning (assuming there are no conflicts)
