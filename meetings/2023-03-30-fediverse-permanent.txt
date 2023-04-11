@@ -1,0 +1,34 @@
+Patrick Curry, Cecilia, Natalie
+
+	* instances come and go in the fediverse, no uptime guarantee
+	* tools for backing up fediverse content or improving migration? Maybe backup solves that halfway at least
+		* nightly cron job that requests a backup for each account and put it in Permanent
+		* eventually a hosted version where you sign in with both sets of credentials
+		* Natalie's sense is backups right now only support exporting settings etc, not content
+		* media storage depends on the server but generally don't support a ton of space, so probably not an issue for "sync giant video to Permanent"
+		* Initially: Natalie thought a user could give their API creds on Mastodon to Permanent BUT...
+			* that wouldn't work for pixelfed/peertube/misskey (thanks!)
+			* there's a wrapper around all these apis in swift that Patrick knows of
+	* or a Permanent Mastodon instance?
+		* It might not exactly be an instance but it might be a server that uses ActivityPub
+		* Our instance could be backed up automatically / backups could be part of the promise for users who choose to use ours
+		* Natalie self-hosts an instance (not of Mastodon exactly I think?)
+		* Note that we'd have to do community management etc - big commitment
+
+Various levels of difficulty:
+    1. Make something that calls Mastodon's API (this is the nightly cronjob)
+			* Users would have to generate API keys (or use oauth I think?) in Mastodon and give them to Permanent (somehow)
+			* API changes are inevitable
+			* This is a script that people could run themselves on whatever cadence they want, and/or a hosted version that people can sign up for
+    2. Use ActivityPub to get information from any other instance that uses ActivityPub (i.e. not just Mastodon) to do backups
+			* This has less "consent" built in because the user could pass in anyone's handle to "follow" them
+				* There may be ways to manage this: users can already choose to make their account indexable (via hashtag)
+					* Or the user would have to interact with the Permanent crawler user in some way (e.g. dm a passcode)
+					* We worry that a hashtag is too confusing, or too public (if people don't want to broadcast that they're doing this preservation)
+			* Note that it's not considered polite to crawl the public fediverse
+			* Blue sky: if you "publish" the backup in Permanent, maybe it becomes another, followable, ActivityPub stream?
+			* Should our Public Gallery be ActivityPub based?
+				* Proof of concept would be RSS feed maybe?
+	3. Have a Permanent instance NO
+
+Storage: users need to pay for storage somehow - could make a fork of Mastodon that integrates with Permanent, but that sounds like A Lot

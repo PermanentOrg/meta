@@ -1,0 +1,53 @@
+Sprint Planning
+2023-04-03, 2:30pm Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2023-03-27-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Liam
+	* 
+	* Dan
+
+
+
+## Good News
+	* Dan: We went on a babymoon! There were sheep outside of our room!
+	* Cecilia: it is warming up here (despite recent blizzard)
+	* Fon : It's rainy season, my favorite season. It would be for like 7 months!
+	* Natalie: went to a cycling event this weekend
+	* Dan (round 2): My very exciting news is I built the 2023 april fools for slack... it's a ChatGPT proxy
+	* Liam: made finals in a baronial rapier tournament
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-repo%3APermanentOrg%2Fvis-timeline
+- Notification service needs a new version of node and something else (we don't know what yet)
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* New time for this meeting? Considering 9 PT/ noon ET / 5 Limbe / 7 Timisoara
+	* Fon is working on QA repo
+	* Dan suggests that we come up with the "when are we done?" list on Thursday
+
+
+## Deployment
+Natalie - Weds or Thurs

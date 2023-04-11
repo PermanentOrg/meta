@@ -1,0 +1,55 @@
+2023-03-31 Backlog grooming
+
+Cecilia and Natalie
+
+Pothole sprint
+	* include the allowSftpDeletion flag
+	* uptime robot changes
+	* mobile changes
+	* Angular upgrade?
+Natalie and Cecilia are thinking that we'll carry over any (genuinely) in-progress or pull request tickets to the pothole sprint, but not ones that haven't been picked up yet so we can focus on the actual potholes.
+
+KR estimation / questions
+	* Export/import metadata
+		* merge or replace on import?
+	* Storage improvements (***)
+		* Gift storage from one account to another (this exists on the backend so far as I, Cecilia, can tell at a quick glance)
+		* Set an account as payer on an archive
+			* Assumption: we want people to be able to keep going as they have been (i.e. don't want to default to making the archive owner the payer or something)
+			* everywhere we bill, add a check "does the destination archive have a payer? if so, bill them"
+			* Not a huge change in itself, but a bit dangerous since we'd have to make sure not to miss anywhere
+			* UI for setting the payer and a place that information (field on the archive table?)
+			* Question: would there be a requirement (or desire) to show the payer's available storage on the archive somewhere?
+		* Give storage directly to an archive
+			* rewrite how billing/storage works
+			* or have secret accounts and use those as the payer? < I like this cause it's 2 birds one stone ;) It'll solve the payer account problem and the funding an account problem
+	* SFTP
+		* Need the deletion flag, but that's just a migration
+		* Hard delete has stalled
+	* Download different filetypes
+		* want a design
+		* back-end needs to send all available files for a record to the client (if it doesn't already)
+		* then present the available files
+		* also some KB work to explain why you may or may not have multiple download options (which implies some backend investigation work, most likely)
+		* test this with every file type that we say that we support / convert
+	* Data visualization/reporting (checklist)
+		* cowpaths spreadsheet Kaitlyn made: https://docs.google.com/spreadsheets/d/1F8aCf7hXRHvCDukHs3OXb9_pCmruffoHW1SCQVpIl30/edit?usp=sharing
+			* (Kaitlyn hid the columns she doesn’t want)
+		* Imagining a retool dashboard
+		* Individual? Group? Over time? (Guesses:)
+			* % opted in to the newsletter for time period
+			* Cross reference? (people who opted in to the newsletter and opened welcome email?)
+			* Both! Want the table view of individuals and filtering/grouping options
+				* Everyone ever, but recent changes should appear at the top
+				* “Average time between account creation and upload” would be interesting (chunked to see changes? Or average forever?)
+	* Onboarding goal setting (not bad!)
+		* multiple screens?
+		* is it one screen with multiple checkboxes? then send info on to MailChimp?
+			* get a design for the screen
+			* build the new screen (3? depends on what it looks like!)
+			* add a backend endpoint that translates info to mailchimp tags and sends them there (also 3?)
+			* could include some onboarding cleanup here - e.g. accept all invitations
+	* Launch legacy planning
+
+
+Move sprint planning earlier on Monday
