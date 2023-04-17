@@ -1,0 +1,32 @@
+2023-04-14
+Plan Q2 2023!
+
+
+	1. Create an exportable/importable metadata design doc
+	2. All members are able to view and distribute their storage balance
+	3. 3 organization partners use SFTP to solve a problem
+		3.1. https://permanent.atlassian.net/browse/PER-9218 (backend MFA)
+		3.2. https://permanent.atlassian.net/browse/PER-9191 (frontend MFA)
+		3.3. https://permanent.atlassian.net/browse/PER-9219 (frontend delete-over-sftp setting)
+		3.4. https://github.com/PermanentOrg/sftp-service/issues/52 
+	4. Members have the option to view and download original and converted file types w/ file type extension
+		4.1. https://permanent.atlassian.net/browse/PER-9220 (see filetype in info tab)
+		4.2. https://permanent.atlassian.net/browse/PER-9222 (review conversions)
+		4.3. https://permanent.atlassian.net/browse/PER-9221 (add download links)
+	5. Members can upload files that are larger than 5GB in size
+		5.1. https://permanent.atlassian.net/browse/PER-8510
+	6. Create a strategic member journey data system design doc
+	7. 25% of new members identify their goals in one week of Q2
+		7.1. https://permanent.atlassian.net/browse/PER-9226
+	8. Launch a calendar of events
+	9. Make 5 mini tutorial videos for Legacy Planning launch
+		9.1.  https://permanent.atlassian.net/browse/PER-9095
+
+
+
+Design/experience team needs:
+	* MFA on/off design (in account settings)
+	* Language for delete-over-SFTP toggle
+	* Design for downloading different file types
+	* Design for goal-setting
+	* Legacy planning email language
