@@ -1,0 +1,66 @@
+Sprint Planning
+2023-04-24, 11:00am Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+        * Review current status of some active tickets involved in recent work
+
+# Previously
+https://github.com/PermanentOrg/meta/blob/main/meetings/2023-03-27-sprint-planning.txt
+
+# Process (Agenda)
+        * Share any good news ya' got!
+        * Individual Issue Items
+        * Open PRs
+        * Deployments
+
+## Roll Call
+	*  Andrei
+	*  Cecilia
+	*  Natalie
+	* Dan
+	* Liam
+	* Fon
+	* 
+	* 
+## Good News
+	*  -getting more comfortable with angular
+	*  
+	* Liam: watched a lot of playoff hockey this weekend, and visited a vegan sports bar
+	* Cecilia: my eyes are not getting worse \o/
+	* Dan: Oldest has announced she wants to play Super Mario Oddysey herself!
+	* Fon: The weekend moved so fast lol, we just playing D&D just like yesterday??? (It feels) 
+	* Natalie: had a party this weekend to celebrate my sister's philippine dual citizenshipWhat new citizenship did she pickup?
+
+## Pull Requests
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-repo%3APermanentOrg%2Fvis-timeline
+- Most critical that I can see: upload-service and notification-service to node 14
+- Andrei's PRs?
+- Public search
+- TODO: assign back-end dependabots (which are failing)
+- Dan will do sftp-service and permanent-sdk dependabots for now
+- Holding off on web-app dependabots pending Angular upgrade
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+## Notes
+	* Memcache on AWS
+	* Production issues!
+	* SFTP demo?
+		* smooth!
+		* Performance testing is ongoing
+			* Cecilia to verify that @permanent.org accounts have unlimited storage
+	* Web-app vs org repo secrets
+		* Natalie remembers that we do want separate copies for web-app because they will be public by virtue of being in the web app (but not for deploy-only vars, which are not packaged in the app)
+		* Workaround to find out if we have separate values would be to change a var name in the deploy action so we don't have to blow away secret values (at least not immediately)
+	* Back-end dependabots - Cecilia
+
+
+## Deployment
+Natalie - Weds or Thurs

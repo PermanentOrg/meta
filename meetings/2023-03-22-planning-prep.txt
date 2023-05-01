@@ -1,0 +1,22 @@
+Ideas/questions:
+    
+Looking at https://docs.google.com/spreadsheets/d/1IvhNoIC1tL79GVUG-TXbS2sWnARZuC6tI4PuKeA2m_c/edit#gid=940107053
+
+	1. Check on "2022 Webapp Roadmap" tab and see where we are
+	2. Look at mainstage roadmap to see what's next
+		2.1. legacy planning - qa feedback, legacy contact, maybe more
+		2.2. continued SFTP work (deletion, scaling)
+		2.3. donation to an archive etc
+	3. What isn't on there?
+		3.1. Upgrade angular
+		3.2. Upgrade FusionAuth
+		3.3. Upgrade PHP + Debian
+		3.4. Sentry cleanup!
+		3.5. Crowdsourced ML training set of old photos for facial recognition
+		3.6. FusionAuth "stuff" that needs to be finished - 2FA self service, getting rid of MFA on change password (unless we actually need it in a newer version)
+		3.7. Web-app - maybe public gallery work, maybe the redesign (though the actual designs are still in progress)
+			3.7.1. And some invisible restructuring to go along with this
+	4. Note: rclone design meeting tomorrow for "allow delete over sftp" setting
+	5. General commentary on how we do "pothole tasks"
+		5.8. First sprint of the quarter reserved for them? Yes!
+
