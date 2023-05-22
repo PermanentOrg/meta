@@ -1,0 +1,23 @@
+2023-05-19
+Backlog grooming
+
+Attendees:
+    Andrei, Cecilia, Natalie, Liam
+
+	* Bug from Kaitlyn: https://permanent.atlassian.net/browse/PER-9272
+		* Andrei will pick up next week
+	* Unpointed tickets in sprint 205
+		* Follow up with https://permanent.atlassian.net/browse/PER-9261 (some more tickets to make)
+	* Unpointed tickets in sprint 206
+	* Glance at potholes
+	* Review of legacy planning
+		* Should plan to demo as we go and June 9 at the latest
+		* Today: directives modal
+		* Next week: legacy contact in storybook
+		* June 2: legacy contact modal and emails
+		* June 9: QA has begun, demo entire thing, catching final bugs
+		* June 15: announcement
+	* Demos today
+		* Directive modal!
+		* Screenshots/video from Andrei?
+	* Stela certs
