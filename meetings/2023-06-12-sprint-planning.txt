@@ -1,0 +1,15 @@
+
+
+## Notes
+	* Legacy planning:
+		* Need to re-review and merge email changes
+		* Some more QA responses
+			* The update issue can probably be solved with a conditional within the query
+		* MFA? Natalie will pick up PER-9284
+	* SFTP refresh tokens
+		* Cecilia to send link to etherpad plugin
+		* Fon is traveling this week
+
+## Deployment
+Cecilia
+- Need QA changes and new links for legacy planning to be done. Ideally Tuesday but likely Weds (maybe move the window earlier?)
