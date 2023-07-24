@@ -1,0 +1,19 @@
+
+
+Epics for KRs that are ready to start now:
+	* 2.1 https://permanent.atlassian.net/browse/PER-9306
+		* are we waiting for more design here?
+	* 2.2 - nonengineering
+	* 3.1 - waiting on design, but what is the "complete goal setting backend work" subtask?
+	* 3.2 - waiting on the choice of tool
+	* 3.3 - nonengineering
+	* 4.1 https://permanent.atlassian.net/browse/PER-9307
+	* 1.1 https://permanent.atlassian.net/browse/PER-9305 (at bottom because most complicated)
+	* Carrying forward:
+		* gift storage/payer work
+		* login spins forever
+		* reduce AWS bill
+
+Other topics:
+	* Tibi coming on full time / design process
+	* SFTP ticket around improving error messages
