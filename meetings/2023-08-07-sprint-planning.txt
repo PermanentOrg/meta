@@ -1,0 +1,56 @@
+Sprint Planning
+2023-08-07, 11:00am Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+
+## Roll Call
+	* Cecilia
+	* Liam 
+	*  Natalie
+	* 
+
+## Good News
+	* Cecilia saw Barbie
+	* Wizards of the Coast announced a Western-themed Magic set 
+	*  
+	* 
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+- Liam will do upload-service dependabots (other than the one Natalie already did!)
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Andrei out this week
+	* SFTP update
+		* Jason and Fon figured out refresh tokens, yay!
+		* Need to register users to FA apps on signup
+		* OR register them for the SFTP app when they first use that service
+		* https://github.com/PermanentOrg/sftp-service/issues/175#issuecomment-1664314321
+	* Double check on final-final onboarding design
+
+
+## Deployment
+Cecilia (Weds)
