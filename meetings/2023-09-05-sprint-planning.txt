@@ -1,0 +1,77 @@
+Sprint Planning
+2023-09-05, 11:00am Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Cecilia
+	* Dan
+	* Liam
+	* Natalie
+	* Andrei
+	* Fon
+
+## Good News
+	* Dan: Tried mowing the lawn, lawn mower exploded (ok well, a bolt fell off, but, that's kind of like exploding!)
+		* Decided it was time to just move out of the gas powered life and buy an electric mower.  I really wanted a corded mower but sucked it up and got a battery powered one.
+	* Liam: Started reading A Fire Upon the Deep, which I knew nothing about going in and turns out to be really good
+		* My most recent sci fi read was This Is How You Lose The Time War
+	* Natalie: this weekend in Phoenix AZ we had a high of less than 100 degrees F. (it will get hot again later this week though) .... oh.
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Plan for the node 18 updates is: Permanent team will try spinning up an instance and documenting the methodology, but in a time boxed way.  Otherwise we'll just merge in today and push things to dev, and test there.
+	* SFTP updates
+		* Fon and Dan are going to pair on refresh tokens - getting a strange response from Permanent back-end when testing
+		* Dan's node change will be merged/deployed as described above
+		* Cecilia and Dan will pair on returning more useful info from registerRecord
+	* Sentry error quote depleted. Looks like this is because of the "trying to send some notification locally" problem. 
+		* https://permanentorg.sentry.io/issues/3967826179/events/12dc78dad64a4ea587bac889b87f577f/
+		* https://permanent.atlassian.net/browse/PER-9246 - would like to move this up so we don't run out of Sentry errors
+	* Not repeating existing errors in metadata ingestion
+		* Time + offset uniquely identifies a moment, but not a timezone
+		* Saving more data than we're allowed to via reverse geocoding
+		* Reverse geocoding address results aren't necessarily accurate
+		* Current plan: switch to Open Street Maps and save a "city level" version of the address
+			* This would imply switching to OSM on the front end as well, though we don't think that's blocking at the moment
+			* Question about mobile as well
+	* Pair Programming
+		* pairing windows: 11-4 central / 9-2 Pacific / 7p - midnight Timisoara
+			* Maybe just Fridays?
+			* Cecilia/Andrei maybe on Mon/Weds around 9:15 Central / 5:15 Timisoara?
+		* nudge?
+			* emergency fixes - "I'm working on this and here's a call if anyone wants to join"
+			* new section of this meeting for "what can we pair on?"
+			* small nudge this week, hard nudge next week (signing up with times), then discuss in person
+
+## Pairing
+	* Upload test suite
+	* registerRecord response
+	* At some point there should be a nice, self-contained piece of metadata ingestion (location or date processing probably)
+
+## Deployment
+Cecilia (Weds)
+* image build
