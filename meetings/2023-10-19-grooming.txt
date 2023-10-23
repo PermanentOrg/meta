@@ -1,0 +1,22 @@
+2023-10-19
+Grooming
+
+Notes
+	* Quick points for next sprint
+	* Do we need any further tickets for gifting?
+		* No but PER=9322 is blocked because it will happen in stela now
+		* Design reviewed and all good!
+	* Discussion of metadata in stela vs metadata via archivematica
+		* Liam thinks: Archivematica calls a webhook, which creates an event, which lambdas listen for
+	* Need another SFTP ticket in next sprint
+		* Added one as a placeholder to make sure we keep moving forward on this KR.
+
+KR checkin
+	* AIR (ongoing)
+	* Gifting (ongoing)
+	* New accounts -> member journey (related to invite code work just done)
+		* Cecilia to make or schedule an epic for this
+	* TheirStory roadmap
+	* SFTP bugs (in progress)
+	* File conversion doc (paused but in progress)
+	* Metadata in stela

@@ -1,0 +1,62 @@
+Sprint Planning
+2023-10-02, 11:00am Central
+Hosted on Jitsi at https://meet.jit.si/CleanSystemsPopNot 
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	*  Andrei
+	*  Liam
+	*  Natalie
+	*  Fon
+	* 
+## Good News
+	* Going on a trip this weekend.
+	* Prepared for the SCA war happening next weekend
+	* Natalie: Biked over 50km this weekend
+	*  
+	* 
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+- Cecilia: permanent-sdk
+- Natalie: upload-service
+- Liam: sftp-service
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* SFTP update
+		* Performance testing!
+		* Rclone has changed behavior and now tries to upload partials
+			* Need to update documentation to include this tag
+		* Tests are using one user with different connections, so sharing a cache. Didn't crash with 5 connections! Uploads worked. Definitely noticeably slower on the web client while the uploads were happening.
+		* CPU was the limitation (thanks Fon)
+	* Andrei can test gifting with backend in https://github.com/PermanentOrg/back-end/tree/per-9327-invite-gifts (just needs tests)
+	* Schedule conversion doc work this week
+
+## Pairing
+	* Design doc
+
+## Deployment
+Cecilia
+
+

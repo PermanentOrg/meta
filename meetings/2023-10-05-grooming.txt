@@ -1,0 +1,34 @@
+2023-10-05
+Grooming
+
+	* Gifting (https://permanent.atlassian.net/browse/PER-8489)
+		* Storage design doc: https://docs.google.com/document/d/1r7v_o04Zo61SP81d9gzhQAmW7p5JBhWQQq0TeSi6G_Y/edit
+		* Would like to have a screen capture of this by board meeting on Oct 26
+		* Need to send an email to the recipient even if they have an account: https://permanent.atlassian.net/browse/PER-9322
+			* Need email text
+			* Probably not a blocker for Oct 26
+		* Can we send to a comma-separated list of emails? This should be simple on backend, more complicated on front end
+			* Back-end ticket: https://permanent.atlassian.net/browse/PER-9372
+			* Front-end ticket: 
+			* Needs error handling on emails
+			* UI changes on gift screen:
+				* Gift $ per email
+				* Total storage/$ gifted
+			* Robert is working on getting us a design for this - due by next Friday
+		* https://permanent.atlassian.net/browse/PER-9374 Pending invites screen needs a column for the amount of the gift (if any)
+			* Also not a blocker for Oct 26, though nice to include in video if possible
+	* Photo managers gift matching
+		* ticket: write a query to figure out if anyone who signed up with the relevant code has purchased storage and add it to Preset for exp team
+		* ticket: make sure we can get a system-to-account gift in all the relevant database places for end-of-month matching (new admin endpoint)
+		* Cecilia will just make and schedule these tickets!
+	* Featured archive work
+		* front end - needs API calls, restructure some data. Natalie will make a ticket.
+		* retool - Cecilia to make and schedule a ticket for this
+		* importing current featured archives to database (with retool?!) (Exp team can do!)
+	* Finalizing upload test
+	* Personal KR tickets
+		* Sentry cleanup
+		* Harvey Mudd clinic proposal
+		* Monitoring
+		* Web-app code coverage: https://permanent.atlassian.net/browse/PER-9359
+	* SFTP tickets
