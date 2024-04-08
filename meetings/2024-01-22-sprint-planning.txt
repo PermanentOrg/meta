@@ -1,0 +1,58 @@
+Sprint Planning
+2024-01-22
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Andrei
+	* Cecilia
+	* Natalie
+	* Liam
+
+## Good News (hobby updates)
+	* Bought a fridge for my apartment
+	* Getting ready to go on vacation :)
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Top priority is getting app back to normal speed
+		* https://one.newrelic.com/nr1-core/apm/overview/MzIzOTI3M3xBUE18QVBQTElDQVRJT058MTU3OTI3MjcwNQ?account=3239273&duration=604800000&filters=%28domain%20IN%20%28%27APM%27%2C%20%27EXT%27%29%20AND%20type%20IN%20%28%27APPLICATION%27%2C%20%27SERVICE%27%29%29&state=74a105ed-4a6d-c4fa-c1fe-7020d521e273 -- what we did on Friday helped!
+		* Deploying more fixes today
+		* I do worry that there is something else going on that's making the API slow other than the deprecation issues
+		* My next target here is the utf8_encode/decode methods
+			* I see Stripe and Mandrill have some errors, so it might be worth updating those too
+	* Two people had errors with logging in after changing their password - just an fyi for now
+	* Janel's snapshot request - Liam is fine with doing this later this week
+	* Another deploy later in the week - maybe discuss performance status at end of day tomorrow (Before Cecilia goes on vacation)
+
+## Pairing
+	* Group review: Angular upgrade?
+	* Perhaps: repo transfer for TightKnit
+	* Deprecation fixes continued!
+
+## Deployment
+Cecilia today
+
+

@@ -1,0 +1,60 @@
+2024-01-11
+Backlog grooming
+
+	* KR list
+		* Link to team KR list in Asana: https://app.asana.com/0/goals/1201376115049704/list?v=1.0&view_mode=teams&time_periods=1203068992710632&expanded_goals=1205078091454495~1205078091454488~1205069933673981~1205622519134278~1205675198341607~1205619782523669~1205631654605604&teams=1200984133958134~1201132891067577~1200992671269492 (I have been bookmarking the quarter's KRs so it's easy to pull them up again)
+	* Goals for today:
+		* Plan basic order of KRs
+		* Schedule into sprints
+		* Identify Asana milestones
+		* Create and point tickets for next sprint at least
+
+	* Pulling some notes from quarterly planning: https://docs.google.com/document/d/12lxd3eAY1P1P-PN4scR-cmn14T0JK2MhMJfxVu75Z-I/edit
+	* Member data checklist (C)
+		* Tickets, broadly:
+			* New integrated tracking system (endpoint or front end) (3) (sprint 4)
+			* New table, maybe, or however we want to store relevant information (3) (sprint 5)
+			* Add events from checklist (3) (sprint 5)
+	* TightKnit integration (C)
+		* Resetting admin accounts (1) (in progress) (sprint 2)
+		* Preparing to respond to any support tickets (2) (sprint 2 if Andrew gets back to us in time)
+			* Meeting with Andrew, figuring out how it all works, writing docs
+		* Test the platform to make sure it’s behaving as we expect (3)
+		* Undo redirect (2)
+			* Make sure to push from our newly transferred/created repo
+			* Blocked by communication plan (exp team)
+	* TheirStory on permanent-sdk (C)
+		* This is in progress (on TS side)
+		* v2 of backend endpoints (sprint 2)
+		* add new endpoints to sdk (sprint 3)
+	* Cache folders (N)
+		* Build a folder caching system (5) (sprint 3)
+		* Integrate caching into app (10) (sprint 4-5)
+			* DataService cleanup
+			* Find and centralize file system code that lives outside of DataService
+		* Extra credit: Add move/delete to cache (2)
+	* Archivematica (L)
+		* Deploy Archivematica (10 points)
+			* Determine deployment scheme (3) (sprint 2 of the qtr)
+			* Set up infrastructure as code (5) (sprint 3)
+			* Deploy through the environments (2) (done by end of sprint 3 of the quarter)
+		* Programmatically route uploaded files through Archivematica for processing (8)
+			* Archivematica configuration design (2) (sprint 4)
+			* Configure Archivematica (3) (sprint 4)
+			* Call Archivematica (probably simple, just call their API) (3) (sprint 5)
+	* Glam component library (N)
+		* Build component library in web-app (8) (sprint 2 [both Natalie and Andrei], then sprint 4 with answers from Tibi/exp team)
+			* Components:
+				* Button
+				* Toggle
+				* Move pr-form-input into component library
+			* Create a list of questions for Tibi (he returns Jan 29) (this is a ticket in itself)
+		* Authentication (2) (sprint 5)
+		* Navigation (3)
+			* Account and archive menus
+			* Maybe modal design as well
+		* Major blocker is being sure we have the designs for the basic components (e.g. a button) before we start. Do these exist?
+			* https://www.figma.com/file/lLHzIJcmkwkvdl3ipcjyKs/%5BApp%5D-Permanent?type=design&node-id=50-2&mode=design
+			* Looks good, but not 100% complete
+
+	* 

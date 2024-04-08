@@ -1,0 +1,55 @@
+Sprint Planning
+2024-03-04
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Cecilia
+	* Natalie
+	* Andrei
+	* Liam
+
+## Good News (hobby updates)
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Member removal email - are we waiting on anything to merge that?
+		* Just QA for the email sending itself; Kaitlyn might need help
+	* Schedule another mob session
+	* Has anyone dockerized a Mongo db?
+	* Cecilia to check on status of MFA design for Andrei
+	* Carousel discussion
+		* This could be quite a bit of work, carousel or no - we need to put a list of featured images somewhere and access it
+		* Was the carousel specifically requested? Cecilia doesn't think so
+
+## Pairing
+	* Mob time
+	* Mongo dockerization
+	* Archivematica deploy to staging (!)
+	* Folder caching - maybe better in future
+
+## Deployment
+	* Natalie - maybe Weds
+
