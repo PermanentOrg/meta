@@ -1,0 +1,78 @@
+Sprint Planning
+2024-04-15
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Andrei
+	* Liam
+	* Cecilia
+
+## Good News (hobby updates)
+	*  Started a game of Victoria 3 (the Victorian era equivalent of Crusader Kings 3 and Europa Universalis 4)
+	*  
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+- Clearing date: what was the back-end ticket?
+Ticket: https://permanent.atlassian.net/browse/PER-9255
+- 
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Account storage bug:
+		* for accounts without 2fa, is this done?
+		* make a ticket to add storage to the response from the verify endpoint too
+	* Where should images and text come from for new signin screen?
+		* Exp team todo: choose the images and text
+		* Backend todo: Set up a source for the images - current thought is a table with the text and links to the images (ideally those would be settable through the admin panel too, but that's not MVP)
+			* Cecilia: make ticket(s) and schedule
+		* Frontend todo: Create a fallback
+			* Andrei will get this into a reviewable state with placeholder images and text
+	* Brainstorm test deploy ideas for TightKnit
+		* Backend: add a field to an endpoint response? (we want something we can check after deploy)
+		* Frontend: small text change
+	* Checklist endpoint(s): one? several?
+		* option 1: get all events for a user
+		* option 2: endpoint could know about existing checklist items - let's do this
+		* option 3: endpoint takes input from front end about specific kinds of events (so we could add a checklist item just on the front end)
+		* Note: if account was created before (date when all checklist events begin to be recorded) then default checklist to hidden
+	* Other work that should be started soon:
+		* Reference: https://docs.google.com/document/d/1v7K3S4hzvnRMdB9sxDBsVAJovGZUPZ7CWnZe2jQekb4/edit#heading=h.c97ktqyv9hd3
+		* Review account space code
+		* Set up OAuth in Retool
+		* 
+
+## Pairing
+	* Andrei and Cecilia on stela
+	* Mobbing next Monday (Cecilia to schedule)
+	* TightKnit test deploy?
+	* Checklist endpoint
+	* Originals storage
+	* Share/publish design doc
+	* Lots of options
+
+## Deployment
+Cecilia
+- make sure to do a stela deploy
+- probably Weds
+
