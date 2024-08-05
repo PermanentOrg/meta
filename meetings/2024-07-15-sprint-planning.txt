@@ -1,0 +1,62 @@
+Sprint Planning
+2024-07-15
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Cecilia
+	* Liam
+	* Natalie
+	* Valentin
+
+## Good News (hobby updates)
+	* C finished a knitting project
+	* L is learning another facet of a game
+	* V is decorating
+	* 
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+- Valle will do upload-service
+- Natalie will do sftp-service
+- Cecilia will do permanent-sdk
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Welcome Valle
+	* WP update (dev -> prod)
+		* Cecilia will do during Weds deployment window
+		* (Also will share docs with Valle)
+	* Look through the Q2 backlog
+	* Copying object to itself error
+		* open a bug ticket in the next sprint
+	* Standup for Natalie, Andrei, and me tomorrow
+	* Soft delete vs hard delete on account_archive
+		* Hard delete *and* record an event
+
+## Pairing
+	* Live review for Valle's first PR?
+	* Mob time on Friday
+
+## Deployment
+Still Liam? Yes
+

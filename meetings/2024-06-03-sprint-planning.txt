@@ -1,0 +1,60 @@
+Sprint Planning
+2024-06-03
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+Andrei
+Liam
+Natalie
+
+## Good News (hobby updates)
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+Natalie: upload-service
+Cecilia: functional-test and donations-firebase
+Liam: sftp-service
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Nice job on last sprint!
+	* Short sprints for the rest of the quarter
+	* KR likelihood overview, to discuss in staff mtg
+		* Currently prioritizing checklist and scalable processing
+		* Then onboarding
+		* Lower priority SFTP and share/publish
+		* Lowest: PKRs (admin panel and account space lambda)
+	* Probably moving out:
+		* change photo buttons
+		* permission error after move-to-public?
+
+## Pairing
+	* Mob time
+	* Cecilia would ride-along on front end if timing works out
+
+## Deployment
+Liam
+- include prod infra deploy (debian 12 image) assuming no issues arise on dev/staging beforehand
+- probably Tuesday
+
+

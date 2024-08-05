@@ -1,0 +1,59 @@
+Sprint Planning
+2024-06-17
+
+# Purpose
+Engineering team gets in sync on this week's goals and this sprint's status
+
+# Outcomes
+Review current status of some active tickets involved in recent work
+
+# Previously
+
+# Process (Agenda)
+    * Share any good news ya' got!
+    * Individual Issue Items
+    * Open PRs
+    * Deployments
+
+## Roll Call
+	* Cecilia
+	* Liam
+
+## Good News (hobby updates)
+	* 
+
+## Pull Requests
+Non-dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+-author%3Aapp%2Fdependabot+
+
+Dependabots: https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3APermanentOrg+draft%3Afalse+-repo%3APermanentOrg%2Fpermanent-android+-repo%3APermanentOrg%2Fpermanent-ios+-repo%3APermanentOrg%2Fep_permanent_exporter+author%3Aapp%2Fdependabot+
+
+## Tickets
+https://permanent.atlassian.net/jira/software/c/projects/PER/boards/3
+https://github.com/PermanentOrg/sftp-service/issues
+https://github.com/PermanentOrg/back-end/issues
+
+
+## Notes
+	* Great job on last sprint! Weekly cadence seems to be working well
+	* Skipping next week's sprint planning (I am out and quarterly planning will be happening)
+		* I'll schedule something for next Tuesday
+	* Added some bugs to this week's sprint
+	* New Sentry error on web-app? https://permanentorg.sentry.io/issues/5483437225/?notification_uuid=f2ad07b0-1a47-42bb-be7c-725e5e3ebb53&project=5285675&referrer=weekly_report
+	* Problem: Our current plan has the account space updater triggered by a S3 notification that fires when a new file appears in the /originals folder of the relevant environment's S3 bucket. We will not, based on this event alone, be able to tell whether the event came from a new file upload or from a copy operation. This presents a problem because the account space updater needs to create an entry in ledger_nonfinancial, and the current expectation is that this entry would record whether the storage deduction came from an upload or a copy (in the type column).
+	* Possible Solutions:
+		* Stop recording whether the entry comes from an upload vs. a copy in ledger_nonfinancial. This is simple, and that information does exist elsewhere (i.e., in the event table), but it would produce a discontinuity in or data and either degrade or add deleterious complexity to the transaction history shown in the app
+		* Have the account space updater check the event table to determine whether the file comes from an upload or a copy. This would require moving the event for uploads from the frontend to the backend, but this is desirable anyway. It could also potentially lead to a scaling problem at some point, because the event table will once in wide use grown much faster than our other tables, making reads costly.
+		* Don't use S3 events; instead fire SNS events ourselves (or build SNS event firings into the existing copy and upload events; this would again necessitate moving the upload event to the backend). Firing our own events would be more failure-prone than using the S3 events (AWS has more 9s than we do), but also more expressive.
+			* Decision: send an SNS event on every call to /event. Also move the upload event to the backend since it will now be responsible for storage updates and should not be subject to client vagaries.
+	* Staff meeting note: do we want to deploy the checklist this week?
+		* I think we still need QA on the "integrate" PR
+
+## Pairing
+	* Mailchimp tag bug
+	* Maybe account space
+	* Plus writing project
+
+## Deployment
+Skip this week
+
+
